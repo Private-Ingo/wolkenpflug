@@ -1,0 +1,306 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
+
+/* #Base 960 Grid
+================================================== */
+
+
+/* Media Queries
+================================================== */
+@media only screen and (min-width:768px) {
+
+  .front .field-type-image {
+    float: right;
+    margin-left: 1%;
+  }
+
+  .sidebar-left .column,
+  .sidebar-left .columns {
+    margin-left: 0;
+  }
+
+  .sidebar-left #content-wrapper .columns {
+    float: right;
+  }
+
+}
+
+/* #Tablet (Landscape)
+================================================== */
+/* Note:Design for a width of 768px */
+@media only screen and (min-width:768px) and (max-width:959px) {
+  body.bg-dark-linen 
+{
+   background: url("../images/blaetter.jpg") repeat fixed 0 0;
+}
+
+
+.container,
+#main-menu
+{
+  width: auto;
+}
+
+.container .sixteen.columns 
+{
+    width: auto;
+}
+
+
+#content article .service-links ul
+{
+	padding-left: 0px;
+}
+
+#content article
+{
+	margin-bottom: 70px;
+	position: relative;
+	min-height: 600px;
+}
+
+#content article .service-links ul li
+{
+	list-style-image: none;
+	list-style: none;
+	display:inline-block;
+	
+}
+
+.floating-block-active
+{
+    z-index: 100;
+}
+
+.blockFloat-0.floating-block-active
+{
+	box-shadow: -20px 20px 29px #000000;
+}
+
+
+
+#menu-wrapper 
+{
+    background: none;
+    margin-bottom: 0px;
+	box-shadow: none;
+    background: rgba(0, 0, 0, 0) url("../images/blaetter.jpg") repeat fixed 0 0;
+    z-index: 101;
+    margin-bottom: 20px;
+}
+.text_container
+{
+	float: none;
+	position:relative;
+}
+.image_container
+{
+	float: none;
+    width: auto;
+}
+.text_container
+{
+	width: auto;
+	background-color: #909090;
+	min-height: 300px;
+	color:#303030;
+	padding: 20px 20px 20px 20px;
+	position: relative;
+	z-index:100;
+	background:none;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	box-shadow: -20px 20px 29px #000000;
+}
+
+
+
+.text_container header .title-wrapper h2 a
+{
+	color:#303030;
+}
+
+.field-type-image img 
+{
+    border: none;
+}
+
+img.portrait
+{
+	float: none;
+}
+
+img.landscape
+{
+	float: none;
+}
+.image_container .field-type-image 
+{
+    float: none;
+    margin-left: none;
+}
+
+#block-menu-menu-kategorien ul.menu li.expanded ul
+{
+	display: inline;
+	padding: 0;
+    width: auto;
+    z-index: 300;
+    padding-top: 15px;
+    position: relative;
+}
+
+
+#block-menu-menu-kategorien ul.menu li.expanded ul li
+{
+    float: none;
+    position: static;
+    text-align: center;
+    border-top: none;
+    border-left-color: none;
+    border-left-style: none;
+    border-left-width: 0px;
+}
+
+#content-wrapper #block-menu-menu-kategorien  li 
+{
+    display: inline-block;
+    text-align: center;
+    margin-right: 3px;
+    font-size: 10px;
+}
+
+#block-menu-menu-kategorien  li a 
+{
+    display: block;
+    padding-bottom: 5px;
+}
+
+#block-menu-menu-kategorien ul
+{
+	text-align: center;
+	margin: 5px 0px 5px 0px;
+}
+#block-menu-menu-kategorien
+{
+	background: rgba(0, 0, 0, 0) url("../images/blaetter.jpg") repeat fixed 0 0;
+}
+
+.icon_container
+{
+	position: absolute;
+	right: 15px;
+    top: 15px;
+}
+
+.icon_container a
+{
+	display: block;
+}
+
+.color-palette-warm-purple section h1
+{
+	color:#d3d3d3;
+	border-bottom: 2px solid #909090;
+	margin-bottom: 50px;
+}
+
+.front .field-type-image 
+{
+    margin-left: 0px !important;
+}
+
+#hero-first
+{
+	margin-top: 0px;
+}
+
+.service-links-forward img
+{
+	width: 28px;
+}
+  
+}
+
+/* #Mobile (Landscape)
+================================================== */
+/* Note:Design for a min width of 480px */
+@media only screen and (min-width:461px) and (max-width:767px) {
+ 
+
+}
+
+/*#Mobile (Portrait)
+================================================== */
+/* Note:Design for a min width of 320px */
+
+@media only screen and (min-width:300px) and (max-width:460px) {
+
+
+
+}
+
+/* #Clearing
+================================================== */
+/* Self Clearing Goodness */
+.container:after {
+  clear: both;
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* Use clearfix class on parent to clear nested columns,
+  or wrap each row of columns in a <div class="row">*/
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+  content: '\0020';
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+
+.row:after,
+.clearfix:after {
+  clear: both;
+}
+
+.row,
+.clearfix {
+  zoom: 1;
+}
+
+.clear {
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+
+img.scale-with-grid {
+  height: auto;
+  max-width: 100%;
+}
+
+

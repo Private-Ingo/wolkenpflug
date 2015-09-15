@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * 
+ * Implementation of HOOK_insert
+ * Adapt the menu output to needed menus, add infos
+ * 
+ * @param object $node
+ *
+ * 
+ */
+function custom_mod_node_update($node)
+{
+	// Get some field items from a field called 'field_photo.
+	if ($image_items = field_get_items('node', $node, 'field_image')) {
+		$image_item = array_shift($image_items);
+		
+	
+		// Load the associated file.
+		$file = file_load($image_item['fid']);
+		
+		// An array of image styles to create.
+		$image_styles = array('original', 'newsletter_image');
+	
+		foreach ($image_styles as $style_name) 
+		{
+			// Get the location of the new image.
+			$derivative_uri = image_style_path($style_name, $file->uri);
+			$style = image_style_load($style_name);
+			// Create the image.
+			image_style_create_derivative($style, $file->uri, $derivative_uri);
+		}
+	}
+}
