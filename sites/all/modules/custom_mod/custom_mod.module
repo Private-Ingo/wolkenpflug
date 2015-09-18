@@ -1,34 +1,37 @@
 <?php
 
-/**
- * 
- * Implementation of HOOK_insert
- * Adapt the menu output to needed menus, add infos
- * 
- * @param object $node
- *
- * 
- */
-function custom_mod_node_update($node)
+function custom_mod_form_alter(&$form, &$form_state, $form_id) 
 {
-	// Get some field items from a field called 'field_photo.
-	if ($image_items = field_get_items('node', $node, 'field_image')) {
-		$image_item = array_shift($image_items);
+	switch($form_id) 
+	{
+		case 'comment_node_werk_form':
+			$form['author']['homepage']['#access'] = FALSE;
+			$form['comment_body']['und'][0]['value']['#title'] = t('Your story');
+			break;
+	}
+}
+
+function custom_mod_node_view_alter(&$build)
+{
+	if(isset($build['links']['comment']['#links']['comment-add']))
+	{
+		$titleCount = explode(' ', $build['links']['comment']['#links']['comment-comments']['title']);
 		
-	
-		// Load the associated file.
-		$file = file_load($image_item['fid']);
-		
-		// An array of image styles to create.
-		$image_styles = array('original', 'newsletter_image');
-	
-		foreach ($image_styles as $style_name) 
+		if(is_numeric($titleCount[0]))
 		{
-			// Get the location of the new image.
-			$derivative_uri = image_style_path($style_name, $file->uri);
-			$style = image_style_load($style_name);
-			// Create the image.
-			image_style_create_derivative($style, $file->uri, $derivative_uri);
+			$titleCount[1] = t('Story');
+			
+			if($titleCount[0] > 1)
+			{
+				$titleCount[1] = t('Storys');
+			}
+			$titleCount[0] = '<span class="comment_count">' . $titleCount[0] . '</span>';
 		}
+		$glue = '';
+		$build['links']['comment']['#links']['comment-comments']['title'] = implode($glue, $titleCount);
+		$build['links']['comment']['#links']['comment-comments']['attributes']['title'] = t('Read first story');
+		$build['links']['comment']['#links']['comment-add']['title'] = t('Tell your Story');
+		$build['links']['comment']['#links']['comment-add']['attributes']['title'] = t('Tell new story');
+		
 	}
 }

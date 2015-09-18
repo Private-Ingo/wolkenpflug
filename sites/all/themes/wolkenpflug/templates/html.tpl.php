@@ -63,6 +63,8 @@
   ga('send', 'pageview');
 
 </script>
+
+<script src="http://fotube.com/wp-content/plugins/Photo2Print/inc/printwidget/c0e82f4c-7184-469c-a9d8-4b6dd8c475bd-94.js"></script>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>

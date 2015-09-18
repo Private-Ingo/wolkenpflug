@@ -135,18 +135,20 @@
 
   /* menu icon */
   #menu-icon {
-    background: #ecebeb url('../images/menu-icon.png') no-repeat 10px center;
+    background: #909090 url('../images/menu-icon.png') no-repeat 10px center;
     border: solid 1px #667;
-    color: #000;
+    color: #fff;
     cursor: pointer;
     display: block;
     height: 30px;
     padding: 8px 10px 0 42px;
-    width: 84px;
+    width: 50px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
   }
 
   #menu-icon:hover {
-    background-color: #f8f8f8;
+    color: #000;
   }
 
   #menu-icon.active {

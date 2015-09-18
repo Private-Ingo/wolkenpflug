@@ -50,17 +50,38 @@
 	{
 		$node = node_load($nid->nid);
 		
-		$alias = drupal_get_path_alias('node/'. $nid->nid);
+		// Get some field items from a field called field_image.
+		if ($image_items = field_get_items('node', $node, 'field_image'))
+		{
+			$image_item = array_shift($image_items);
 		
+		
+			// Load the associated file.
+			$file = file_load($image_item['fid']);
+		
+			// An array of image styles to create.
+			$image_styles = array('newsletter_image');
+		
+			foreach ($image_styles as $style_name)
+			{
+				// Get the location of the new image.
+				$derivative_uri = image_style_path($style_name, $file->uri);
+				$style = image_style_load($style_name);
+				// Create the image.
+				image_style_create_derivative($style, $file->uri, $derivative_uri);
+			}
+		}
+		
+		$alias = drupal_get_path_alias('node/'. $nid->nid);
 		$output[$nid->nid]['title'] = '<a href="' . $base_root .'/' . $alias . '">' . $node->title . '</a>';
-		$output[$nid->nid]['summary'] = $node->body['und'][0]['summary'];
+		$output[$nid->nid]['summary'] = $node->body[LANGUAGE_NONE][0]['summary'];
 		$output[$nid->nid]['imageurl'] = image_style_url('newsletter_image', $node->field_image['und'][0]['uri']);
 		$output[$nid->nid]['url'] = $base_root .'/' . $alias;
 		
 	}
 	
 	?>
-	<<style>
+	<style>
 <!--
 body
 {

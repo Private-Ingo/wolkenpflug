@@ -77,7 +77,6 @@
  * @see template_preprocess_node()
  * @see template_process()
  */
-
 	hide($content['field_image']);
 	hide($content['comments']);
 	hide($content['links']);
@@ -166,6 +165,10 @@
 	    	<?php if ($icons ? print $icons : '') ?>
 		</div>	
   		<?php print render($content); ?>
+  			<div class="service_links_container">
+		<?php print render($content['service_links']); ?>
+	</div>	
+  </div>
   </div>
     <?php elseif($type == 'simplenews'):?>
   	  <?php if ($title): ?>
@@ -174,8 +177,6 @@
 	<div class="pure_text">
 	
   <?php print render($content); ?>	
-		
-  </div>
   
   <?php elseif($page):?>
    <?php if ($title): ?>
@@ -188,7 +189,7 @@
 		<?php print render($content['service_links']); ?>
 		<?php print render($content); ?>
   		<?php print render($content['field_image']);?>
-  		-----<?php print render($content['comments']);?>-----
+  		<?php print render($content['comments']);?>
 	</div>
   <?php endif;?>
  

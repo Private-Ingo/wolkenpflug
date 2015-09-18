@@ -63,19 +63,29 @@
  * @see template_preprocess_page()
  * @see template_process()
  */
+
 ?>
 
 <header id="head" role="banner" class="container">
   <hgroup class="ten columns alpha">
-
-    <div id="logo">
+<div class="slideshow_container clearfix <?php print ($is_front || !isset($node)) ? 'slider' : '';?>">
+    <div id="logo" class="clearfix">
       <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>
            <?php print t('&nbsp;» Home Page'); ?>">
         <img id="logo-img" src="<?php print $logo; ?>" alt="<?php print $site_name; ?>
         <?php print t(' » Home Page'); ?>"/></a>
       <?php endif; ?>
-    </div>
+     
+ </div>
+  	<?php
+	  	if($is_front || !isset($node))
+	  	{
+			$block = module_invoke('views', 'block_view', 'slideshow-block');
+			print render($block['content']);
+	  	}
+	?>
+</div>
 <?php if ($site_name): ?>
     <div id="site-title-wrapper">
       <h1 id="site-title">
