@@ -15,20 +15,25 @@ function custom_mod_node_view_alter(&$build)
 {
 	if(isset($build['links']['comment']['#links']['comment-add']))
 	{
-		$titleCount = explode(' ', $build['links']['comment']['#links']['comment-comments']['title']);
-		
-		if(is_numeric($titleCount[0]))
+		if(isset($build['links']['comment']['#links']['comment-comments']['title']))
 		{
-			$titleCount[1] = t('Story');
-			
-			if($titleCount[0] > 1)
+			$titleCount = explode(' ', $build['links']['comment']['#links']['comment-comments']['title']);
+			if(is_numeric($titleCount[0]))
 			{
-				$titleCount[1] = t('Storys');
+				$titleCount[1] = t('Story');
+					
+				if($titleCount[0] > 1)
+				{
+					$titleCount[1] = t('Storys');
+				}
+				$titleCount[0] = '<span class="comment_count">' . $titleCount[0] . '</span>';
 			}
-			$titleCount[0] = '<span class="comment_count">' . $titleCount[0] . '</span>';
+			
+			$glue = '';
+			$build['links']['comment']['#links']['comment-comments']['title'] = implode($glue, $titleCount);
 		}
-		$glue = '';
-		$build['links']['comment']['#links']['comment-comments']['title'] = implode($glue, $titleCount);
+
+		
 		$build['links']['comment']['#links']['comment-comments']['attributes']['title'] = t('Read first story');
 		$build['links']['comment']['#links']['comment-add']['title'] = t('Tell your Story');
 		$build['links']['comment']['#links']['comment-add']['attributes']['title'] = t('Tell new story');

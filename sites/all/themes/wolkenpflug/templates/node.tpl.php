@@ -82,7 +82,7 @@
 	hide($content['links']);
 	hide($content['field_gruppe']);
 	hide($content['service_links']);
-	//echo '<pre>' . print_r(array_keys($variables), true) . '</pre>'; die();
+	unset($content['links']['node']);
 	$icons = '';
 	if(isset($content['field_gruppe']) && isset($content['field_gruppe']['#items']))
 	{
@@ -94,11 +94,18 @@
 			$icons .='</a>';
 		}
 	}
-	//echo '<pre>' . print_r($type, true) . '</pre>'; die();
+	
+	$args = arg();
+	$iscomment = false;
+	if ($args[0] == 'comment' && $args[1] == 'reply')
+	{
+		$iscomment = true;
+	}
+	
 ?>
 
 <article id="node-<?php print $node->nid; ?>" class="<?php if($type == 'page' ? print 'page_text ' : ''); ?> <?php if($type == 'text' ? print 'text_article ' : ''); ?><?php print $classes; ?> clearfix" <?php print $attributes; ?>>
-<?php if(!$page && $type != 'text' && $type != 'simplenews'):?>
+<?php if(!$page && $type != 'text' && $type != 'simplenews' && !$iscomment):?>
 	<div class="text_container">
 		<?php print $user_picture; ?>
 		<header class="article-header">
@@ -146,6 +153,11 @@
 			      <nav class="links node-links clearfix"><?php print render($content['links']); ?></nav>
 			  <?php endif; ?>
 			  <div class="service_links_container">
+			  <div class="print_link">
+			  <a href=""><img src="/sites/all/themes/wolkenpflug/images/rahmen-rot.png" title="Bald/Future"><span>Mein Druck</span></a>
+			 
+			  </div>
+			  
 			  	<?php print render($content['service_links']); ?>
 			  	</div>
 				<div class="icon_container">
@@ -156,7 +168,7 @@
 	<div class="image_container">
 	  	<?php print render($content['field_image']);?>
 	</div>
-  <?php elseif($type == 'text'):?>
+  <?php elseif($type == 'text' && !$iscomment):?>
   	  <?php if ($title): ?>
 			      <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
 			    <?php endif; ?>
@@ -170,7 +182,7 @@
 	</div>	
   </div>
   </div>
-    <?php elseif($type == 'simplenews'):?>
+    <?php elseif($type == 'simplenews' && !$iscomment):?>
   	  <?php if ($title): ?>
 			      <h1<?php print $title_attributes; ?>><?php print $title; ?></h1>
 	<?php endif; ?>
@@ -178,8 +190,8 @@
 	
   <?php print render($content); ?>	
   
-  <?php elseif($page):?>
-   <?php if ($title): ?>
+  <?php elseif($page || $iscomment):?>
+   <?php if ($title && !$iscomment): ?>
 		<h1<?php print $title_attributes; ?>><?php print $title; ?></h1>
 	<?php endif; ?>
   	<div class="icon_container">

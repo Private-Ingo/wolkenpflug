@@ -42,14 +42,36 @@ body
     width: 1200px;
 }
 
- .service-links img
+.service-links img
+{
+	width: 30px;
+	background: url("/sites/all/themes/wolkenpflug/images/background-weiß.png") no-repeat;
+	background-position: center center;
+}
+
+.print_link
+{
+	height: 30px;
+}
+
+.print_link img
 {
 	width: 30px;
 }
 
-.service-links-forward img 
+.print_link span
 {
-    width: 28px;
+	padding: 3px;
+}
+.print_link a
+{
+	display: inline-flex;
+}
+ .service-links img:hover
+{
+	width: 30px;
+	background: url("/sites/all/themes/wolkenpflug/images/background-grün.png") no-repeat;
+	background-position: center center;
 }
 
 .service-links .links a
@@ -69,6 +91,8 @@ body
 #content article .service-links ul
 {
 	padding-left: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 #content article
@@ -423,10 +447,6 @@ span.drop-arrow
 	margin-bottom: 25px;
 }
 
-.service-links-forward img
-{
-	width: 28px;
-}
 
 #head,
 #content-wrapper,

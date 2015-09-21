@@ -250,24 +250,13 @@
 	
 	.service-links
 	{
-		float: right;
 		margin-top: 5px;
 	}
 	
-	.service-links .links a
+	.service_links_container
 	{
-		width: 25px;
-		height: 25px;
-	}
-	
-	.service-links img
-	{
-		width: 25px;
-	}
-	
-	.service-links-forward img 
-	{
-    	width: 23px;
+		float: right;
+		margin-right:5px;
 	}
 	.service-links ul
 	{
