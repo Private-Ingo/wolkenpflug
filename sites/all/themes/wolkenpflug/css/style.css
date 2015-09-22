@@ -12,7 +12,8 @@ body.body-font-sans-serif {
 body
 {
 	color:#ffffff;
-    background: url("../images/blaetter.jpg") repeat fixed 0 0;
+    background: url("../images/wasser1.png") repeat fixed 0 0;
+    background-color: slategrey;
 }
 
 @font-face 
@@ -57,6 +58,7 @@ body
 .print_link img
 {
 	width: 30px;
+	height: 30px;
 }
 
 .print_link span
@@ -174,7 +176,7 @@ body
 	top: 50px;
 	position: absolute;
 	z-index:100;
-	background:#909090 url("/sites/all/themes/wolkenpflug/images/blackBorder.png") repeat-y right 40px bottom;
+	background:rgba(144,144,144, 0.8) url("/sites/all/themes/wolkenpflug/images/blackBorder.png") repeat-y right 40px bottom;
 	border-top-left-radius: 30px;
 	box-shadow: -20px 20px 29px #000000;
 }
@@ -354,9 +356,10 @@ span.drop-arrow
 	margin: 5px 0px 5px 0px;
 	padding-left: 0px;
 }
-#block-menu-menu-kategorien
+
+.floating-block-active
 {
-	background: rgba(0, 0, 0, 0) url("../images/blaetter.jpg") repeat fixed 0 0;
+	background: url("/sites/all/themes/wolkenpflug/images/blaetter.jpg") repeat-x fixed 0 0;
 }
 
 #block-menu-menu-kategorien h2

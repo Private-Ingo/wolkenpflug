@@ -26,12 +26,7 @@
  *
  * @see template_preprocess_simplenews_newsletter_body()
  */
-?>
-<h3><?php print $title; ?></h3>
 
-<h4><?php print t('Dear') . ' '. $simplenews_subscriber->mail;?></h4>
-<?php print render($build['body']); ?>
-<?php 
 	$nowMonat = time() - 2629743;
 	
 	$query = db_select('node', 'n');
@@ -80,7 +75,7 @@
 		
 	}
 	
-	?>
+?>
 	<style>
 <!--
 body
@@ -88,6 +83,7 @@ body
 	background: url("<?php print$base_root; ?>/sites/all/themes/wolkenpflug/images/blaetter.jpg") repeat fixed 0 0;
 	color:#ffffff !important;
 	padding-top:50px;
+
 }
 
 a
@@ -100,25 +96,49 @@ td
 }
 -->
 </style>
-	<table width="600" border="0" cellspacing="0" cellpadding="0" style="background-ima" >
+	
+<h3><?php print t('Dear') . ' '. $simplenews_subscriber->mail;?></h3>
+
+	<table align="center" width="800" border="0" cellspacing="0" cellpadding="0" style="margin-right:auto; margin-left:auto;" >
+	<tr>
+		<td width="220px">
+			<a href="$base_root"><img style="width: 220px;" src="<?php print $base_root; ?>/sites/default/files/wolke-tranz.png"></a>
+		</td>
+		<td style="font-size: 26px; padding-top:30px;">
+			<h3><?php print $title; ?></h3>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="border-bottom:2px solid #909090; ">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="font-size: 26px; padding-top:30px; text-align: center">
+			<?php print render($build['body']); ?>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="border-bottom:2px solid #909090; ">&nbsp;</td>
+	</tr>
 	<?php foreach ($output as $print):?>
 	<tr>
-		<td style="font-size: 26px; padding-top:30px;">
+		<td colspan="2" style="font-size: 26px; padding-top:30px; text-align: center">
 		<?php print $print['title'];?>
 		</td>
 	</tr>
 	<tr>
-		<td  style="font-size: 20px;" align="left">
+		<td  colspan="2" style="font-size: 20px; text-align: center;">
 		<?php print $print['summary'];?>
 		</td>
 	</tr>
 	<tr>
-		<td>
-		<a href="<?php print $print['url'];?>"><img style="border: 2px solid #909090; padding:4px;"src="<?php print $print['imageurl'];?>"></a>
+		<td colspan="2" style="text-align: center;">
+		<a href="<?php print $print['url'];?>">
+			<img style="border: 2px solid #909090; padding:4px;"src="<?php print $print['imageurl'];?>">
+		</a>
 		</td>
 	</tr>
 	<tr>
-	<td style="border-bottom:2px solid #909090; ">&nbsp;</td>
+	<td colspan="2" style="border-bottom:2px solid #909090; ">&nbsp;</td>
 	</tr>
 	<?php endforeach;?>
 	</table>

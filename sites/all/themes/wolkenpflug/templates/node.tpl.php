@@ -178,6 +178,7 @@
 		</div>	
   		<?php print render($content); ?>
   			<div class="service_links_container">
+  			
 		<?php print render($content['service_links']); ?>
 	</div>	
   </div>
@@ -199,6 +200,9 @@
 	</div>	
 	<div class="page_content">
 		<?php print render($content['service_links']); ?>
+		<div class="print_link">
+			  <a href=""><img src="/sites/all/themes/wolkenpflug/images/rahmen-rot.png" title="Bald/Future"><span>Mein Druck</span></a>
+		</div>
 		<?php print render($content); ?>
   		<?php print render($content['field_image']);?>
   		<?php print render($content['comments']);?>

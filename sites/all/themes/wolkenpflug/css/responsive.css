@@ -30,14 +30,25 @@
 /* #Tablet (Landscape)
 ================================================== */
 /* Note:Design for a width of 768px */
-@media only screen and (min-width:100px) and (max-width:959px) 
+@media only screen and (min-width:100px) and (max-width:399px) 
 {
-	 body.bg-dark-linen 
+	.color-palette-warm-purple  section .node-text h2
 	{
-	   background: url("../images/blaetter.jpg") repeat fixed 0 0;
+		color:#d3d3d3;
+		border-bottom: 4px solid #909090;
+		margin-bottom: 10px;
+		font-family: 'Tangerin';
+		font-size: 40px;
+		height: 50px;
+		margin-top: 0px;
+		padding-left: 5px;
 	}
 	
-	 
+	#logo-img
+	{
+		width: 100px;
+		backgrund-color: none;
+	}
 	.container,
 	#main-menu
 	{
@@ -79,8 +90,6 @@
 	{
 		box-shadow: -20px 20px 29px #000000;
 	}
-	
-	
 	
 	#menu-wrapper 
 	{
@@ -198,7 +207,309 @@
 		margin: 0px 0px 0px 0px;
 		padding-left: 0px;
 	}
-	#block-menu-menu-kategorien
+	.floating-block-active
+	{
+		background: url("../images/blaetter.jpg") repeat fixed 0 0;
+		width: 100% !important;
+		left: 0px !important;
+		right: 0px !important;
+	}
+	
+	.icon_container
+	{
+		position: static;
+		right: auto;
+	    top: auto;
+	    text-align: center;
+	    display: inline-block;
+	    margin-left: 10px;
+	}
+	
+	.icon_container a
+	{
+		display: inline-block;
+		margin-right: 3px;
+	}
+	
+	#site-title-wrapper h1
+	{
+		margin: 5px;
+		text-align: center;
+	}
+	
+	.color-palette-warm-purple section h1
+	{
+		color:#d3d3d3;
+		border-bottom: 2px solid #909090;
+		margin-bottom: 10px;
+		text-align: center;
+		font-size: 40px;
+		height: 50px;
+	}
+	
+	.front .field-type-image 
+	{
+	    margin-left: 0px !important;
+	}
+	
+	#hero-first
+	{
+		margin-top: 0px;
+	}
+	
+	.service-links
+	{
+		margin-top: 5px;
+	}
+	
+	.service_links_container
+	{
+		float: right;
+		margin-right:5px;
+	}
+	.service-links ul
+	{
+		margin:0px;
+	}
+	
+	.service-links .links a:hover
+	{
+		background-color: transparent;
+	}
+	
+	.node-links
+	{
+		margin: 10px 0px 0px 10px;
+    	
+		position: relative;
+	}
+	
+	.field-name-body 
+	{
+    	max-width: auto;
+	}
+	
+	.content_links
+	{
+		position: absolute;
+		bottom: -60px;
+		left: 0;
+		right: 0;
+		width: auto;
+		background-color: #909090;
+		min-height: 50px;
+	}
+	
+	.text_container .field-name-body 
+	{
+		max-width: 100%;
+		min-height: auto;
+	}
+	
+	
+	.slider #logo
+	{
+		position: relative;
+		top: 0px;
+		left: 0px;
+		z-index:101;
+		background: none;
+		
+	}
+	
+	#logo
+	{
+		position: relative;
+		top: 0px;
+		left: 0px;
+		z-index:101;
+		background: none;
+		
+	}
+
+	.slideshow_container.slider
+	{
+		position: relative;
+		box-shadow: none;
+		height: auto;
+		margin-bottom: 10px;
+	}
+	
+	#views_slideshow_cycle_main_slideshow-block
+	{
+		display:none;
+	}
+	
+	.slideshow_container 
+	{
+	    box-shadow: none;
+	    margin-bottom: 30px;
+	    position: relative;
+	}
+}
+
+@media only screen and (min-width:400px) and (max-width:959px) 
+{
+
+	.container,
+	#main-menu
+	{
+	  width: auto;
+	}
+	
+	.container .sixteen.columns 
+	{
+	    width: auto;
+	}
+	
+	
+	#content article .service-links ul
+	{
+		padding-left: 0px;
+	}
+	
+	#content article
+	{
+		margin-bottom: 100px;
+		position: relative;
+		min-height: auto;
+	}
+	
+	#content article .service-links ul li
+	{
+		list-style-image: none;
+		list-style: none;
+		display:inline-block;
+		
+	}
+	
+	.floating-block-active
+	{
+	    z-index: 100;
+	}
+	
+	.blockFloat-0.floating-block-active
+	{
+		box-shadow: -20px 20px 29px #000000;
+	}
+	
+	#menu-wrapper 
+	{
+	    background: none;
+	    margin-bottom: 0px;
+		box-shadow: none;
+	    z-index: 101;
+	    margin-bottom: 20px;
+	}
+	
+	.image_container
+	{
+		float: none;
+	    width: auto;
+	}
+	.text_container
+	{
+		width: auto;
+		background-color: #909090;
+		min-height: 300px;
+		color:#303030;
+		padding: 5px 20px 20px 20px;
+		position: static;
+		z-index:100;
+		border-top-left-radius: 30px;
+		border-top-right-radius: 30px;
+		box-shadow: 0px 20px 29px #000000;
+		float: none;
+		background-image: none;
+		min-height: auto;
+		padding-bottom: 5px;
+	}
+	
+	.text_container .title-wrapper h2
+	{
+		color:#303030;
+		text-align: center;
+		margin: 0px;
+	}
+	
+	.field-name-body 
+	{
+		max-width: auto;
+	}
+
+	.image_container .field-type-image img,
+	.page_content .field-name-field-image img,
+	.field-type-image img 
+	{
+	    border: none;
+	    height: auto;
+    	width: 100%;
+    	padding: 0px;
+	}
+	
+	img.portrait
+	{
+		float: none;
+	}
+	
+	img.landscape
+	{
+		float: none;
+	}
+	.image_container .field-type-image 
+	{
+	    float: none;
+	    margin-left: none;
+	}
+	
+	#block-menu-menu-kategorien ul.menu li.expanded ul
+	{
+		display: inline;
+		padding: 0;
+	    width: 100% !important;
+	    z-index: 300;
+	    padding-top: 15px;
+	    position: relative;
+	}
+	
+	
+	#block-menu-menu-kategorien ul.menu li.expanded ul li
+	{
+	    float: none;
+	    position: static;
+	    text-align: center;
+	    border-top: none;
+	    border-left-color: none;
+	    border-left-style: none;
+	    border-left-width: 0px;
+	}
+	
+	#content-wrapper #block-menu-menu-kategorien li 
+	{
+	    display: inline-block;
+	    text-align: center;
+	    margin-right: 3px;
+	    font-size: 10px;
+	}
+	
+	.field-type-text-with-summary  p
+	{
+	    margin: 0px 0px 0px 0px;
+	}
+	
+	#block-menu-menu-kategorien  li a 
+	{
+	    display: block;
+	    padding-bottom: 5px;
+	}
+	
+	#block-menu-menu-kategorien ul
+	{
+		text-align: center;
+		margin: 0px 0px 0px 0px;
+		padding-left: 0px;
+	}
+	.floating-block-active
 	{
 		background: url("../images/blaetter.jpg") repeat fixed 0 0;
 		width: 100% !important;
@@ -299,7 +610,7 @@
 	
 	#logo-img
 	{
-		width: 100px;
+		width: 200px;
 		backgrund-color: none;
 	}
 	
