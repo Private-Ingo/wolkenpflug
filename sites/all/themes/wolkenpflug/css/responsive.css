@@ -108,8 +108,7 @@
 	.text_container
 	{
 		width: auto;
-		background-color: #909090;
-		min-height: 300px;
+		background-color: rgba(144, 144, 144, 0.8);
 		color:#303030;
 		padding: 5px 20px 20px 20px;
 		position: static;
@@ -121,6 +120,13 @@
 		background-image: none;
 		min-height: auto;
 		padding-bottom: 5px;
+	}
+	
+	.text_container header,
+	.text_container .content_links,
+	.text_container header
+	{
+		width: auto;
 	}
 	
 	.text_container .title-wrapper h2
@@ -209,7 +215,7 @@
 	}
 	.floating-block-active
 	{
-		background: url("../images/blaetter.jpg") repeat fixed 0 0;
+		background: #b7b7b7 url("/sites/all/themes/wolkenpflug/images/wasser2.png") repeat fixed 0 0;
 		width: 100% !important;
 		left: 0px !important;
 		right: 0px !important;
@@ -346,11 +352,62 @@
 	    margin-bottom: 30px;
 	    position: relative;
 	}
+	
+	.text_container_border 
+	{
+	    width: auto;
+	}
+	
+		.content_links .node-links 
+	{
+	    float: left;
+	}
+	
+	.text_container .article-header,
+	.text_container .field-name-body 
+	{
+	    background: none;
+	    width: auto;
+	}
+   
+	.text_container_border
+	{
+		padding: 0px;
+	}
+	
+	.text_container .field-name-body, 
+	.text_container .content_links, 
+	.text_container header 
+	{
+   	 	border-top-left-radius: 0px;
+	}
+	.text_container .content_links
+	{
+		position: absolute;
+		bottom: -70px;
+		left: 0;
+		width: 100%;
+		background-color: #909090;
+		min-height: 50px;
+		background-color: rgba(144, 144, 144, 0.8);
+		padding: 0px;
+	}
+	
+	#menu-wrapper 
+	{
+		background-color: transparent;
+		left: 0px;
+	}
 }
 
 @media only screen and (min-width:400px) and (max-width:959px) 
 {
 
+	 #menu-wrapper 
+	{
+		background-color: transparent;
+		left: 0px;
+	}
 	.container,
 	#main-menu
 	{
@@ -410,8 +467,7 @@
 	.text_container
 	{
 		width: auto;
-		background-color: #909090;
-		min-height: 300px;
+		background-color: rgba(144, 144, 144, 0.8);
 		color:#303030;
 		padding: 5px 20px 20px 20px;
 		position: static;
@@ -423,6 +479,18 @@
 		background-image: none;
 		min-height: auto;
 		padding-bottom: 5px;
+	}
+	
+	.text_container_border 
+	{
+	    width: auto;
+	}
+	
+	.text_container header,
+	.text_container .content_links,
+	.text_container header
+	{
+		width: auto;
 	}
 	
 	.text_container .title-wrapper h2
@@ -511,7 +579,7 @@
 	}
 	.floating-block-active
 	{
-		background: url("../images/blaetter.jpg") repeat fixed 0 0;
+		background: #b7b7b7 url("/sites/all/themes/wolkenpflug/images/wasser2.png") repeat fixed 0 0;
 		width: 100% !important;
 		left: 0px !important;
 		right: 0px !important;
@@ -519,12 +587,10 @@
 	
 	.icon_container
 	{
-		position: static;
-		right: auto;
-	    top: auto;
-	    text-align: center;
-	    display: inline-block;
-	    margin-left: 10px;
+ 		left: 0px;
+    	margin-left: 10px;
+    	position: absolute;
+    	bottom:0px;
 	}
 	
 	.icon_container a
@@ -582,7 +648,6 @@
 	.node-links
 	{
 		margin: 10px 0px 0px 10px;
-    	
 		position: relative;
 	}
 	
@@ -591,21 +656,24 @@
     	max-width: auto;
 	}
 	
-	.content_links
+	.text_container .content_links
 	{
 		position: absolute;
-		bottom: -60px;
+		bottom: -70px;
 		left: 0;
-		right: 0;
-		width: auto;
+		width: 100%;
 		background-color: #909090;
 		min-height: 50px;
+		background-color: rgba(144, 144, 144, 0.8);
+		padding: 0px;
 	}
 	
 	.text_container .field-name-body 
 	{
 		max-width: 100%;
 		min-height: auto;
+		padding: 0px;
+		margin: 0px;
 	}
 	
 	#logo-img
@@ -653,7 +721,30 @@
 	    margin-bottom: 30px;
 	    position: relative;
 	}
-  
+	
+	.content_links .node-links 
+	{
+	    float: left;
+	}
+	
+	.text_container .article-header,
+	.text_container .field-name-body 
+	{
+	    background: none;
+	    width: auto;
+	}
+   
+	.text_container_border
+	{
+		padding: 0px;
+	}
+	
+	.text_container .field-name-body, 
+	.text_container .content_links, 
+	.text_container header 
+	{
+   	 border-top-left-radius: 0px;
+	}
 }
 
 /* #Mobile (Landscape)

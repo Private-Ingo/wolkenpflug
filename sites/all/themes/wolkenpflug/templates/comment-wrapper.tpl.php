@@ -36,7 +36,6 @@
  * @ingroup themeable
  */
 
-
 ?>
 <div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php if ($content['comments'] && $node->type != 'forum'): ?>
@@ -49,7 +48,6 @@
 
   <?php if ($content['comment_form']): ?>
     <h2 class="title comment-form"><?php print t('Add new story'); ?></h2>
-    <?php //echo '<pre>' . print_r($content['comment_form'], true) . '</pre>'; die(); 
-    print render($content['comment_form']); ?>
+    <?php print render($content['comment_form']); ?>
   <?php endif; ?>
 </div>

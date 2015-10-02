@@ -101,70 +101,71 @@
 	{
 		$iscomment = true;
 	}
-	
 ?>
 
 <article id="node-<?php print $node->nid; ?>" class="<?php if($type == 'page' ? print 'page_text ' : ''); ?> <?php if($type == 'text' ? print 'text_article ' : ''); ?><?php print $classes; ?> clearfix" <?php print $attributes; ?>>
 <?php if(!$page && $type != 'text' && $type != 'simplenews' && !$iscomment):?>
 	<div class="text_container">
-		<?php print $user_picture; ?>
-		<header class="article-header">
-	  		<?php if ($display_submitted): ?>
-	   		<div class="submit-wrapper">
-			      <!-- Then show the date in parts for better theming. -->
-			      <div class="date-in-parts">
-			        <span class="day"><?php print $thedate; ?></span>
-			        <span class="month"><?php print $themonth; ?></span>
-			        <span class="year"><?php print $theyear; ?></span>
-			      </div><!--//date-in-parts -->
-			</div><!--//submit-wrapper-->
-	  		<?php endif; ?>
-	  		<div class="title-wrapper">
-	  			<?php print render($title_prefix); ?>
-			<?php if (!$page && $title): ?>
-			<h2<?php print $title_attributes; ?>>
-				<a href="<?php print $node_url ?>" title="<?php print $title ?>">
-	        	<?php print $title ?>
-	      		</a>
-			</h2>
-			<?php else: ?>
-	   			 <!-- node h1 title -->
-			    <?php if ($title): ?>
-			      <h1<?php print $title_attributes; ?>><?php print $title; ?></h1>
-			    <?php endif; ?>
-			<?php endif; ?>
-			<?php print render($title_suffix); ?>
-	  				<!-- Overidden in template.php to show just username. -->
-	    	<?php if ($display_submitted): ?>
-				<?php print $submitted; ?>
-			<?php endif; ?>
-	  		</div><!-- // submitted -->
-		</header>
-
-		<?php print render($content);?>
-		<?php if ($node_block): ?>
-		    <div id="node-block">
-		      <?php print render($node_block); ?>
-		    </div>
-	  	<?php endif; ?>
-
-			<div class="content_links clearfix">
-			  <?php if (!empty($content['links'])): ?>
-			      <nav class="links node-links clearfix"><?php print render($content['links']); ?></nav>
-			  <?php endif; ?>
-			  <div class="service_links_container">
-			  <div class="print_link">
-			  <a href=""><img src="/sites/all/themes/wolkenpflug/images/rahmen-rot.png" title="Bald/Future"><span>Mein Druck</span></a>
-			 
-			  </div>
-			  
-			  	<?php print render($content['service_links']); ?>
-			  	</div>
-				<div class="icon_container">
-			    	<?php if ($icons ? print $icons : '') ?>
+		<div class="text_container_border">
+			<?php print $user_picture; ?>
+			<header class="article-header">
+		  		<?php if ($display_submitted): ?>
+		   		<div class="submit-wrapper">
+				      <!-- Then show the date in parts for better theming. -->
+				      <div class="date-in-parts">
+				        <span class="day"><?php print $thedate; ?></span>
+				        <span class="month"><?php print $themonth; ?></span>
+				        <span class="year"><?php print $theyear; ?></span>
+				      </div><!--//date-in-parts -->
+				</div><!--//submit-wrapper-->
+		  		<?php endif; ?>
+		  		<div class="title-wrapper">
+		  			<?php print render($title_prefix); ?>
+				<?php if (!$page && $title): ?>
+				<h2<?php print $title_attributes; ?>>
+					<a href="<?php print $node_url ?>" title="<?php print $title ?>">
+		        	<?php print $title ?>
+		      		</a>
+				</h2>
+				<?php else: ?>
+		   			 <!-- node h1 title -->
+				    <?php if ($title): ?>
+				      <h1<?php print $title_attributes; ?>><?php print $title; ?></h1>
+				    <?php endif; ?>
+				<?php endif; ?>
+				<?php print render($title_suffix); ?>
+		  				<!-- Overidden in template.php to show just username. -->
+		    	<?php if ($display_submitted): ?>
+					<?php print $submitted; ?>
+				<?php endif; ?>
+		  		</div><!-- // submitted -->
+			</header>
+	
+			<?php print render($content);?>
+			<?php if ($node_block): ?>
+			    <div id="node-block">
+			      <?php print render($node_block); ?>
+			    </div>
+		  	<?php endif; ?>
+	
+				<div class="content_links clearfix">
+				  <?php if (!empty($content['links'])): ?>
+				      <nav class="links node-links clearfix"><?php print render($content['links']); ?></nav>
+				  <?php endif; ?>
+				  <div class="service_links_container">
+				  <div class="print_link">
+				  <a href=""><img src="/sites/all/themes/wolkenpflug/images/rahmen-rot.png" title="Bald/Future"><span>Mein Druck</span></a>
+				 
+				  </div>
+				  
+				  	<?php print render($content['service_links']); ?>
+				  	</div>
+					<div class="icon_container">
+				    	<?php if ($icons ? print $icons : '') ?>
+					</div>
 				</div>
-			</div>
-	</div>
+		</div>
+	 </div>
 	<div class="image_container">
 	  	<?php print render($content['field_image']);?>
 	</div>

@@ -85,6 +85,20 @@
 			print render($block['content']);
 	  	}
 	?>
+	<?php if ($primary_nav): ?>
+<div id="menu-wrapper" class="container">
+  <nav id="main-menu" role="navigation" class="sixteen columns alpha omega">
+    <div class="menu-navigation-container">
+      <!-- Theme native drop downs and mobile menu-->
+      <div id="nav-wrap">
+        <div id="menu-icon">Menu</div>
+        <?php print render($primary_nav); ?>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- end main-menu -->
+<?php endif; ?>
 </div>
 <?php if ($site_name): ?>
     <div id="site-title-wrapper">
@@ -108,20 +122,7 @@
 </div>
 </header>
 
-<?php if ($primary_nav): ?>
-<div id="menu-wrapper" class="container">
-  <nav id="main-menu" role="navigation" class="sixteen columns alpha omega">
-    <div class="menu-navigation-container">
-      <!-- Theme native drop downs and mobile menu-->
-      <div id="nav-wrap">
-        <div id="menu-icon">Menu</div>
-        <?php print render($primary_nav); ?>
-      </div>
-    </div>
-  </nav>
-</div>
-<!-- end main-menu -->
-<?php endif; ?>
+
 
 <?php if ($page['main_menu']): ?>
   <!-- for third party menu system modules like superfish-->

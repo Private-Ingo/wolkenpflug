@@ -12,8 +12,47 @@ body.body-font-sans-serif {
 body
 {
 	color:#ffffff;
-    background: url("../images/wasser1.png") repeat fixed 0 0;
+    background: url("../images/wasser2.png") repeat fixed 0 0;
     background-color: slategrey;
+}
+
+body.background_Flora
+{
+	background-color: #485C5A;
+}
+
+body.background_Natur
+{
+	background-color: #9DB2B1;
+}
+
+body.background_Architektur
+{
+	background-color: #98B1C4;
+}
+
+body.background_Porta
+{
+	background-color: #E9E0DB;
+}
+body.background_Experimente
+{
+	background-color: #FF6600;
+}
+
+body.background_Strukturen
+{
+	background-color: #663300;
+}
+
+body.background_Urban
+{
+	background-color: #99CCCC;
+}
+
+body.background_Fauna
+{
+	background-color: #DABD95;
 }
 
 @font-face 
@@ -101,7 +140,7 @@ body
 {
 	margin-bottom: 70px;
 	position: relative;
-	min-height: 600px;
+	min-height: auto;
 }
 
 #content article .service-links ul li
@@ -142,20 +181,22 @@ body
 	color:#d3d3d3;
 }
 
-
-
 .color-palette-warm-purple nav#main-menu ul li li a 
 {
     background: none;
 }
 
-#menu-wrapper 
+.slideshow_container.slider #menu-wrapper 
 {
     background: none;
     margin-bottom: 0px;
 	box-shadow: none;
     z-index: 101;
-    margin-bottom: 20px;
+    position: absolute;
+    left: 220px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: auto;
 }
 .text_container
 {
@@ -170,15 +211,20 @@ body
 .text_container
 {
 	width: 280px;
-	background-color: #909090;
+	background-color: rgba(144, 144, 144, 0.8);
 	color:#303030;
-	padding: 20px 20px 0px 20px;
+	padding: 0px 20px 0px 20px;
 	top: 50px;
 	position: absolute;
 	z-index:100;
-	background:rgba(144,144,144, 0.8) url("/sites/all/themes/wolkenpflug/images/blackBorder.png") repeat-y right 40px bottom;
 	border-top-left-radius: 30px;
 	box-shadow: -20px 20px 29px #000000;
+}
+
+.text_container_border
+{
+	padding: 20px 0px 20px 0px;
+	width: 260px;
 }
 
 .text_container .node-links
@@ -205,10 +251,32 @@ body
 {
 	margin-bottom:10px;
 	min-height: 100px;
+	width: 260px;
+	padding: 10px;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.5);
+}
+.text_container .content_links
+{
+	width: 260px;
+	padding: 10px;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.text_container .field-name-body,
+.text_container .content_links,
+.text_container header
+{
+	border-top-left-radius: 15px;
 }
 .text_container header
 {
 	margin-bottom:10px;
+	width: 260px;
+	padding: 10px;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.5);
 }
 
 .image_container .field-type-image img 
@@ -218,6 +286,15 @@ body
     max-width: 900px;
 }
 
+.text_container .content_links .comment-add,
+.text_container .content_links .comment-comments
+{
+	display:inline;
+} 
+.comment-comments 
+{
+	margin-right: 10px;
+}
 .comment_count
 {
 	margin-right: 5px;
@@ -226,9 +303,8 @@ body
     display: inline-block;
   	text-align: center;
   	border-top-left-radius: 10px;
-  	border: 1px solid #ffffff;
+  	border: 2px solid #ffffff;
 }
-
 
 .text_container .content_links li
 {
@@ -267,11 +343,6 @@ img.portrait
 	top:20px;
 	right: 0px;
 	height: 580px;;
-}
-
-.field-name-body
-{
-	max-width: 230px;
 }
 
 .page_content .field-name-body
@@ -359,7 +430,7 @@ span.drop-arrow
 
 .floating-block-active
 {
-	background: url("/sites/all/themes/wolkenpflug/images/blaetter.jpg") repeat-x fixed 0 0;
+	background: #b7b7b7 url("/sites/all/themes/wolkenpflug/images/wasser2.png") repeat fixed 0 0;
 }
 
 #block-menu-menu-kategorien h2
@@ -390,9 +461,7 @@ span.drop-arrow
 
 .icon_container
 {
-	position: absolute;
-	right: 5px;
-    top: 10px;
+	display:inline;
 }
 
 .node-text .icon_container
@@ -407,14 +476,13 @@ span.drop-arrow
 	display: inline-block;
 }
 
-.icon_container a
-{
-	display: block;
-}
+
+
 #content article.page_text
 {
 	min-height: auto;
 }
+
 .color-palette-warm-purple section h1
 {
 	color:#d3d3d3;
@@ -450,7 +518,6 @@ span.drop-arrow
 	margin-bottom: 25px;
 }
 
-
 #head,
 #content-wrapper,
 #menu-wrapper
@@ -472,9 +539,9 @@ a
 {
    margin-right: auto;
    margin-left:auto;
-   width: 80%;
    font-style: oblique;
 }
+
 #logo-img
 {
 	width: 220px;
@@ -488,18 +555,38 @@ a
 	z-index:101;
 	backgrund-color: black;
 	background-color:rgba(0,0,0,0.5);
-	
 }
 
 .slideshow_container.slider
 {
 	position: relative;
 	box-shadow: -20px 20px 29px #000000;
-	height: 220px;margin-bottom: 30px;
+	height: 220px;
+	margin-bottom: 30px;
+}
+
+.slideshow_container
+{
+	position: relative;
+	
 }
 
 .views-slideshow-cycle-main-frame-row,
 .views-slideshow-cycle-main-frame-row img
 {
 	width: auto !important;
+}
+
+div.comment
+{
+	background-color:rgba(0,0,0,0.3);
+	border: 2px solid #909090;
+	margin-bottom:40px;
+	padding: 10px;
+	border-top-left-radius: 30px;
+}
+
+.comment .service-links
+{
+	margin-top:10px;
 }

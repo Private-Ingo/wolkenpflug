@@ -42,6 +42,15 @@
  *
  * @ingroup themeable
  */
+
+$args = arg();
+
+if ($args[0] == 'taxonomy' )
+{
+	$term = taxonomy_term_load($args[2]);
+	$name = $term->name;
+}
+
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
   "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" version="XHTML+RDFa 1.0" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>>
@@ -51,9 +60,7 @@
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <?php print $scripts; ?>
-</head>
-<body class="<?php print $classes; ?>" <?php print $attributes;?>>
-<script>
+  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -63,8 +70,8 @@
   ga('send', 'pageview');
 
 </script>
-
-<script src="http://fotube.com/wp-content/plugins/Photo2Print/inc/printwidget/c0e82f4c-7184-469c-a9d8-4b6dd8c475bd-94.js"></script>
+</head>
+<body class="<?php print $classes; ?> <?php if(isset($name) ?  print 'background_'. $name : '' );?>" <?php print $attributes;?>>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>

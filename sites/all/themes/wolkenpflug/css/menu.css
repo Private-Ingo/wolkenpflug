@@ -54,7 +54,7 @@
 /* nav link */
 #main-menu ul.menu.ul-depth-0 a {
   color: #fff;
-  display: block;
+  display: menuock;
   font-size: .83em;
   letter-spacing: .09em;
   padding: 9px 11px;
@@ -268,9 +268,11 @@
     background: none;
     margin-bottom: 10px;
 	box-shadow: none;
-    background: rgba(0, 0, 0, 0) url("../images/blaetter.jpg") repeat fixed 0 0;
     z-index: 101;
     margin-bottom: 20px;
+    position: absolute;
+    right: 0px;
+    bottom:0px;
 }
 
 #main-menu a:hover, 

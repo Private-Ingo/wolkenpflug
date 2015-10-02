@@ -255,8 +255,8 @@ function wolkenpflug_preprocess_page(&$vars, $hook) {
   if ($node = menu_get_object()) {
     $vars['is_node'] = true;
   }
-
 }
+
 function wolkenpflug_menu_link(array $variables) 
 {
 	
@@ -441,3 +441,5 @@ function wolkenpflug_image_style($variables)
   $variables ['path'] = image_style_url($variables ['style_name'], $variables ['path']);
   return theme('image', $variables);
 }
+
+?>
