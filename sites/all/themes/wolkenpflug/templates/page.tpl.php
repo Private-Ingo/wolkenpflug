@@ -63,7 +63,13 @@
  * @see template_preprocess_page()
  * @see template_process()
  */
+	$args = arg();
+	$addClass = '';
 
+	if(isset($args[1]) && $args[1] == 'reply')
+	{
+		$addClass = 'write_comment';
+	}
 ?>
 
 <header id="head" role="banner" class="container">
@@ -210,7 +216,7 @@
     <?php $contentwid = "sixteen"; ?>
   <?php endif; ?>
 
-  <div id="content" class="<?php print $contentwid; ?> columns">
+  <div id="content" class="<?php print $contentwid; ?> columns <?php if($addClass ? print $addClass: '');?>"">
     <?php if (!empty($tabs['#primary'])): ?>
       <div class="tabs-wrapper"><?php print render($tabs); ?></div>
     <?php endif; ?>

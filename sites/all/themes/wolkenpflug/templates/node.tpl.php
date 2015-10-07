@@ -84,6 +84,7 @@
 	hide($content['service_links']);
 	unset($content['links']['node']);
 	$icons = '';
+	$addClass = '';
 	if(isset($content['field_gruppe']) && isset($content['field_gruppe']['#items']))
 	{
 		
@@ -99,6 +100,7 @@
 	$iscomment = false;
 	if ($args[0] == 'comment' && $args[1] == 'reply')
 	{
+
 		$iscomment = true;
 	}
 ?>
@@ -193,6 +195,23 @@
   <?php print render($content); ?>	
   
   <?php elseif($page || $iscomment):?>
+	  <script type="text/javascript">
+		  function toggleCommentSection (element)
+		  {
+		  	var comment = jQuery(element);
+		  	var container = comment.next();
+		  	if (comment.hasClass('comment_expanded'))
+		  	{
+		  		container.slideUp();
+		  		comment.removeClass('comment_expanded');
+		  	}
+		  	else
+		  	{
+		  		container.slideDown();
+		  		comment.addClass('comment_expanded');
+		  	}
+		  }
+	  </script>
    <?php if ($title && !$iscomment): ?>
 		<h1<?php print $title_attributes; ?>><?php print $title; ?></h1>
 	<?php endif; ?>

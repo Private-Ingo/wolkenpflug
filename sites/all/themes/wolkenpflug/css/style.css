@@ -368,6 +368,7 @@ img.portrait
 	border: 4px solid #909090;
     padding:20px;
     border-top-left-radius: 30px;
+    background-color:rgba(0,0,0,0.3);
 }
 
 #main-menu a:hover, 
@@ -430,7 +431,7 @@ span.drop-arrow
 
 .floating-block-active
 {
-	background: #b7b7b7 url("/sites/all/themes/wolkenpflug/images/wasser2.png") repeat fixed 0 0;
+	background: #b7b7b7 url("../images/wasser2mobile.png") repeat fixed 0 0;;
 }
 
 #block-menu-menu-kategorien h2
@@ -584,9 +585,93 @@ div.comment
 	margin-bottom:40px;
 	padding: 10px;
 	border-top-left-radius: 30px;
+	position:relative;
 }
 
 .comment .service-links
 {
 	margin-top:10px;
 }
+.comment h3
+{
+	float: left;
+	margin-left:45px;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.comment .submitted
+{
+	float:right;
+	margin-top:2px;
+	margin-right:10px;
+}
+.comment_body
+{
+	display: none;
+}
+
+.expand_comment
+{
+	position:absolute;
+	left: 15px;
+	top: 11px;
+}
+
+.expand_comment img
+{
+	width: 28px;
+	cursor:pointer;
+}
+.expand_comment.comment_expanded img
+{
+	transform: rotate(180deg);
+	background: url("/sites/all/themes/wolkenpflug/images/background-grün.png") no-repeat;
+}
+
+.expand_comment img:hover,
+.expand_comment.comment_expanded img:hover
+{
+	background: url("/sites/all/themes/wolkenpflug/images/background-grün.png") no-repeat;
+	background-position: center center;
+}
+
+.comment .field-item
+{
+	margin-top:25px;
+	margin-bottom: 10px;
+}
+#comment-form
+{
+	display: none;
+}
+.comment_form_wrapper
+{
+	position: relative;
+	background-color:rgba(0,0,0,0.3);
+	border: 2px solid #909090;
+	border-top-left-radius: 30px;
+	padding: 10px;
+	padding-top: 0px;
+}
+.comment_form_wrapper .expand_comment
+{
+	top: 18px;
+}
+.comment_form_wrapper h2
+{
+	margin-left: 45px;
+	margin-top:15px;
+	margin-bottom: 0px;
+}
+.write_comment #comment-form
+{
+	display: block;
+	position: relative;
+	background-color:rgba(0,0,0,0.3);
+	border: 2px solid #909090;
+	border-top-left-radius: 30px;
+	padding: 20px;
+	padding-top: 10px;
+}
+

@@ -58,16 +58,20 @@
  *
  * @ingroup themeable
  */
-
-global $base_url;
-
+	global $base_url;
+//echo '<pre>' . print_r($comment, true) . '</pre>'; die();
+	$args = request_path();
+	$argsPart = explode('/',$args);
+	$iscomment = false;
+	if ($argsPart[0] == 'comment' && $comment->cid == $argsPart[1])
+	{
+		$iscomment = true;
+	}
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print $picture ?>
-
-  <?php if ($new): ?>
-    <span class="new"><?php print $new ?></span>
-  <?php endif; ?>
+  
+<div class="comment_head clearfix">
 
   <?php print render($title_prefix); ?>
   <h3<?php print $title_attributes; ?>><?php print $title ?></h3>
@@ -75,9 +79,14 @@ global $base_url;
 
   <div class="submitted">
     <?php //print $permalink; ?>
-    <?php print $submitted; ?>
+   <?php setlocale(LC_TIME, "de_DE"); print $comment->name . ' ,  ' . strftime('%d %B %Y %H:%M',$comment->created) ?>
   </div>
-
+  
+</div>
+<div class="expand_comment <?php if($iscomment ? print 'comment_expanded': '');?>" onclick="javascript: if(eval(typeof toggleCommentSection === 'function')){toggleCommentSection(this)};">
+	<img src="/sites/all/themes/wolkenpflug/images/arrow_up.png" title="<?php print t('open/close');?>">
+</div>
+<div class="comment_body"  <?php if($iscomment ? print 'style="display:block;"': '');?>>
   <div class="content"<?php print $content_attributes; ?>>
     <?php
       // We hide the comments and links now so that we can render them later.
@@ -107,6 +116,20 @@ global $base_url;
 			
 			<img alt="Google+ logo" src="<?php print $base_url;?>/sites/all/modules/service_links/images/google_plus.png" typeof="foaf:Image">
 		</a>
+		<a 
+			class="service-links-twitter" target="_blank" rel="nofollow" 
+			title="<?php print t('Share on Twitter');?>" 
+			href="http://twitter.com/share?url=<?php print $base_url;?>
+			<?php print '/comment/' . $comment->cid . '#comment-' . $comment->cid; ?>&text=<?php print $comment->comment_body[LANGUAGE_NONE][0]['value']; ?>">
+			<img alt="Twitter logo" src="<?php print $base_url;?>/sites/all/modules/service_links/images/twitter.png" typeof="foaf:Image">
+		</a>
+		<a 
+			class="service-links-forward" 
+			target="_blank" rel="nofollow" 
+			title="<?php print t('Send to Friend');?>" 
+			href="<?php print $base_url;?>/forward?path=<?php print 'comment/' . $comment->cid; ?>">
+			<img alt="Forward logo" src="<?php print $base_url;?>/sites/all/modules/service_links/images/forward.png" typeof="foaf:Image">
+		</a>
 	</div>
-  <?php //print render($content['links']) ?>
+</div>
 </div>

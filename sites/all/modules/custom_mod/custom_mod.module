@@ -16,18 +16,44 @@ function custom_mod_html_head_alter(&$head_elements)
 {
 	$path = request_path();
 	$pathParts = explode('/', $path);
+	global $base_url;
 	
-	if($pathParts[0] == 'comment')
+	if($pathParts[0] == 'comment' && $pathParts[1] != 'reply')
 	{
 		$commentObj = comment_load($pathParts[1], $reset = FALSE);	
-		
+	
 		if(isset($commentObj))
 		{
 			$node = node_load($commentObj->nid);
-		
+			
+			$head_elements['metatag_canonical']['#value'] = $base_url.'/'.$path;
+			
+			//metatags
+			//$head_elements['metatag_og:title_0']['#value'] = $commentObj->subject;
+			$head_elements['metatag_description_0']['#value'] = $commentObj->comment_body[LANGUAGE_NONE][0]['value'];
+			
+			//dublin core
+			$head_elements['metatag_dcterms.title_0']['#value'] = $commentObj->subject;
+			$head_elements['metatag_dcterms.description_0']['#value'] = $commentObj->comment_body[LANGUAGE_NONE][0]['value'];
+			//URL
+			$head_elements['metatag_dcterms.identifier_0']['#value'] = $base_url.'/'.$path;
+			
+			//google +
+			//title
+			$head_elements['metatag_itemprop:name_0']['#value'] = $commentObj->subject;
+			$head_elements['metatag_itemprop:description_0']['#value'] = $commentObj->comment_body[LANGUAGE_NONE][0]['value'];
+			
+			//twitter
+			$head_elements['metatag_twitter:title_0']['#value'] = $commentObj->subject;
+			$head_elements['metatag_twitter:description_0']['#value'] = $commentObj->comment_body[LANGUAGE_NONE][0]['value'];
+			$head_elements['metatag_twitter:url_0']['#value'] = $base_url.'/'.$path;
+			$head_elements['metatag_twitter:image:src_0']['#value'] = file_create_url($node->field_image[LANGUAGE_NONE]['0']['uri']);
+			
+			//OpenGraph
 			$head_elements['metatag_og:title_0']['#value'] = $commentObj->subject;
 			$head_elements['metatag_og:description_0']['#value'] = $commentObj->comment_body[LANGUAGE_NONE][0]['value'];
 			$head_elements['metatag_og:image_0']['#value'] = file_create_url($node->field_image[LANGUAGE_NONE]['0']['uri']);
+			$head_elements['metatag_og:url_0']['#value'] = $base_url.'/'.$path;
 		}
 	}
 }

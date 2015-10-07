@@ -30,383 +30,21 @@
 /* #Tablet (Landscape)
 ================================================== */
 /* Note:Design for a width of 768px */
-@media only screen and (min-width:100px) and (max-width:399px) 
+
+
+@media only screen and (min-width:100px) and (max-width:959px) 
 {
-	.color-palette-warm-purple  section .node-text h2
-	{
-		color:#d3d3d3;
-		border-bottom: 4px solid #909090;
-		margin-bottom: 10px;
-		font-family: 'Tangerin';
-		font-size: 40px;
-		height: 50px;
-		margin-top: 0px;
-		padding-left: 5px;
-	}
 	
-	#logo-img
+	body
 	{
-		width: 100px;
-		backgrund-color: none;
+    	background: url("../images/wasser2mobile.png") repeat fixed 0 0;
+    	background-color: slategrey;
 	}
-	.container,
-	#main-menu
-	{
-	  width: auto;
-	}
-	
-	.container .sixteen.columns 
-	{
-	    width: auto;
-	}
-	
-	
-	#content article .service-links ul
-	{
-		padding-left: 0px;
-	}
-	
-	#content article
-	{
-		margin-bottom: 100px;
-		position: relative;
-		min-height: auto;
-	}
-	
-	#content article .service-links ul li
-	{
-		list-style-image: none;
-		list-style: none;
-		display:inline-block;
-		
-	}
-	
-	.floating-block-active
-	{
-	    z-index: 100;
-	}
-	
-	.blockFloat-0.floating-block-active
-	{
-		box-shadow: -20px 20px 29px #000000;
-	}
-	
-	#menu-wrapper 
-	{
-	    background: none;
-	    margin-bottom: 0px;
-		box-shadow: none;
-	    z-index: 101;
-	    margin-bottom: 20px;
-	}
-	
-	.image_container
-	{
-		float: none;
-	    width: auto;
-	}
-	.text_container
-	{
-		width: auto;
-		background-color: rgba(144, 144, 144, 0.8);
-		color:#303030;
-		padding: 5px 20px 20px 20px;
-		position: static;
-		z-index:100;
-		border-top-left-radius: 30px;
-		border-top-right-radius: 30px;
-		box-shadow: 0px 20px 29px #000000;
-		float: none;
-		background-image: none;
-		min-height: auto;
-		padding-bottom: 5px;
-	}
-	
-	.text_container header,
-	.text_container .content_links,
-	.text_container header
-	{
-		width: auto;
-	}
-	
-	.text_container .title-wrapper h2
-	{
-		color:#303030;
-		text-align: center;
-		margin: 0px;
-	}
-	
-	.field-name-body 
-	{
-		max-width: auto;
-	}
-
-	.image_container .field-type-image img,
-	.page_content .field-name-field-image img,
-	.field-type-image img 
-	{
-	    border: none;
-	    height: auto;
-    	width: 100%;
-    	padding: 0px;
-	}
-	
-	img.portrait
-	{
-		float: none;
-	}
-	
-	img.landscape
-	{
-		float: none;
-	}
-	.image_container .field-type-image 
-	{
-	    float: none;
-	    margin-left: none;
-	}
-	
-	#block-menu-menu-kategorien ul.menu li.expanded ul
-	{
-		display: inline;
-		padding: 0;
-	    width: 100% !important;
-	    z-index: 300;
-	    padding-top: 15px;
-	    position: relative;
-	}
-	
-	
-	#block-menu-menu-kategorien ul.menu li.expanded ul li
-	{
-	    float: none;
-	    position: static;
-	    text-align: center;
-	    border-top: none;
-	    border-left-color: none;
-	    border-left-style: none;
-	    border-left-width: 0px;
-	}
-	
-	#content-wrapper #block-menu-menu-kategorien li 
-	{
-	    display: inline-block;
-	    text-align: center;
-	    margin-right: 3px;
-	    font-size: 10px;
-	}
-	
-	.field-type-text-with-summary  p
-	{
-	    margin: 0px 0px 0px 0px;
-	}
-	
-	#block-menu-menu-kategorien  li a 
-	{
-	    display: block;
-	    padding-bottom: 5px;
-	}
-	
-	#block-menu-menu-kategorien ul
-	{
-		text-align: center;
-		margin: 0px 0px 0px 0px;
-		padding-left: 0px;
-	}
-	.floating-block-active
-	{
-		background: #b7b7b7 url("/sites/all/themes/wolkenpflug/images/wasser2.png") repeat fixed 0 0;
-		width: 100% !important;
-		left: 0px !important;
-		right: 0px !important;
-	}
-	
-	.icon_container
-	{
-		position: static;
-		right: auto;
-	    top: auto;
-	    text-align: center;
-	    display: inline-block;
-	    margin-left: 10px;
-	}
-	
-	.icon_container a
-	{
-		display: inline-block;
-		margin-right: 3px;
-	}
-	
-	#site-title-wrapper h1
-	{
-		margin: 5px;
-		text-align: center;
-	}
-	
-	.color-palette-warm-purple section h1
-	{
-		color:#d3d3d3;
-		border-bottom: 2px solid #909090;
-		margin-bottom: 10px;
-		text-align: center;
-		font-size: 40px;
-		height: 50px;
-	}
-	
-	.front .field-type-image 
-	{
-	    margin-left: 0px !important;
-	}
-	
-	#hero-first
-	{
-		margin-top: 0px;
-	}
-	
-	.service-links
-	{
-		margin-top: 5px;
-	}
-	
-	.service_links_container
-	{
-		float: right;
-		margin-right:5px;
-	}
-	.service-links ul
-	{
-		margin:0px;
-	}
-	
-	.service-links .links a:hover
-	{
-		background-color: transparent;
-	}
-	
-	.node-links
-	{
-		margin: 10px 0px 0px 10px;
-    	
-		position: relative;
-	}
-	
-	.field-name-body 
-	{
-    	max-width: auto;
-	}
-	
-	.content_links
-	{
-		position: absolute;
-		bottom: -60px;
-		left: 0;
-		right: 0;
-		width: auto;
-		background-color: #909090;
-		min-height: 50px;
-	}
-	
-	.text_container .field-name-body 
-	{
-		max-width: 100%;
-		min-height: auto;
-	}
-	
-	
-	.slider #logo
-	{
-		position: relative;
-		top: 0px;
-		left: 0px;
-		z-index:101;
-		background: none;
-		
-	}
-	
-	#logo
-	{
-		position: relative;
-		top: 0px;
-		left: 0px;
-		z-index:101;
-		background: none;
-		
-	}
-
-	.slideshow_container.slider
-	{
-		position: relative;
-		box-shadow: none;
-		height: auto;
-		margin-bottom: 10px;
-	}
-	
-	#views_slideshow_cycle_main_slideshow-block
-	{
-		display:none;
-	}
-	
-	.slideshow_container 
-	{
-	    box-shadow: none;
-	    margin-bottom: 30px;
-	    position: relative;
-	}
-	
-	.text_container_border 
-	{
-	    width: auto;
-	}
-	
-		.content_links .node-links 
-	{
-	    float: left;
-	}
-	
-	.text_container .article-header,
-	.text_container .field-name-body 
-	{
-	    background: none;
-	    width: auto;
-	}
-   
-	.text_container_border
-	{
-		padding: 0px;
-	}
-	
-	.text_container .field-name-body, 
-	.text_container .content_links, 
-	.text_container header 
-	{
-   	 	border-top-left-radius: 0px;
-	}
-	.text_container .content_links
-	{
-		position: absolute;
-		bottom: -70px;
-		left: 0;
-		width: 100%;
-		background-color: #909090;
-		min-height: 50px;
-		background-color: rgba(144, 144, 144, 0.8);
-		padding: 0px;
-	}
-	
-	#menu-wrapper 
-	{
-		background-color: transparent;
-		left: 0px;
-	}
-}
-
-@media only screen and (min-width:400px) and (max-width:959px) 
-{
 
 	 #menu-wrapper 
 	{
 		background-color: transparent;
-		left: 0px;
+		
 	}
 	.container,
 	#main-menu
@@ -710,7 +348,8 @@
 		margin-bottom: 10px;
 	}
 	
-	#views_slideshow_cycle_main_slideshow-block
+	#views_slideshow_cycle_main_slideshow-block,
+	#views_slideshow_cycle_main_slideshow-block img
 	{
 		display:none;
 	}
@@ -743,27 +382,65 @@
 	.text_container .content_links, 
 	.text_container header 
 	{
-   	 border-top-left-radius: 0px;
+   	 	border-top-left-radius: 0px;
+	}
+	.text_container header
+	{
+		margin-top:0px; 
+		padding-top:0px;
+		margin-bottom:0px;
+		padding-bottom:0px;
+	}
+	
+	.slideshow_container.slider #menu-wrapper 
+	{
+	    background-color: transparent;
+	}
+	
+	.slideshow_container.slider #menu-wrapper 
+	{
+	    box-shadow: none;
+	    left: auto;
+	    margin-bottom: 0;
+	    position: absolute;
+	    right: 5px;
+	    top: 25px;
+	    width: 100px;
+	    z-index: 101;
+	}
+	#content .text_article.node-text
+	{
+		margin-bottom:30px;
+	}
+}
+
+@media only screen and (min-width:100px) and (max-width:399px) 
+{
+	#logo-img
+	{
+		width: 100px;
+		backgrund-color: none;
+	}
+	
+	.color-palette-warm-purple section .node-text h2,
+	.color-palette-warm-purple section h1
+	{
+		text-align: center;
+		font-size: 35px;
+		height: 35px;
 	}
 }
 
 /* #Mobile (Landscape)
 ================================================== */
 /* Note:Design for a min width of 480px */
-@media only screen and (min-width:461px) and (max-width:767px) {
- 
 
-}
 
 /*#Mobile (Portrait)
 ================================================== */
 /* Note:Design for a min width of 320px */
 
-@media only screen and (min-width:300px) and (max-width:460px) {
 
-
-
-}
 
 /* #Clearing
 ================================================== */
