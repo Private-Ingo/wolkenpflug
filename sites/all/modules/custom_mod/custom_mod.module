@@ -1,15 +1,60 @@
 <?php
 
 function custom_mod_form_alter(&$form, &$form_state, $form_id) 
-{
-	switch($form_id) 
-	{
-		case 'comment_node_werk_form':
-			$form['author']['homepage']['#access'] = FALSE;
-			$form['comment_body']['und'][0]['value']['#title'] = t('Your story');
-			$form['subject']['#size'] = 44;
-			break;
+{	
+	if($form_id == 'comment_node_werk_form')
+	{	
+		if(isset($form_state['input']['name']) && isset($form_state['input']['mail']))
+		{
+			$userName = $form_state['input']['name'];
+			$userMail = $form_state['input']['mail'];
+			
+			if(isset($userName))
+			{
+				$users = db_select('comment', 'c')
+				->fields('c', array('name', 'mail'))
+				->condition('name', $userName, '=')
+				->execute()
+				->fetchAll();
+			}
+			
+			if($users != '')
+			{
+				foreach ($users as $user)
+				{
+			 		if($user->name == $userName && $user->mail == $userMail)
+					{
+						$default_submit_index = array_search('comment_form_submit', $form['#submit']);
+						$form['#submit'][$default_submit_index] = '_custom_mod_form_submit';
+						break;
+					}
+					elseif ($user->name == $userName && $user->mail != $userMail)
+					{	
+						drupal_set_message('"'. $user->name . '"  ' . t('is already registred with a different email'));
+						drupal_goto('');
+						break;
+					}
+				}
+			}
+		}
+	
+		
+		$form['author']['homepage']['#access'] = FALSE;
+		$form['comment_body']['und'][0]['value']['#title'] = t('Your Calliogram');
+		$form['subject']['#size'] = 41;
+		
 	}
+}
+
+function _custom_mod_form_submit(&$form, &$form_state)
+{
+		$comment = comment_form_submit_build_comment($form, $form_state);
+		comment_submit($comment);
+		comment_save($comment);
+		
+		drupal_set_message(t('Thank you, for your comment. Please wait until the admin check your comment.'));
+		drupal_goto('node/' . check_plain($comment->nid));
+
 }
 
 function custom_mod_html_head_alter(&$head_elements) 
@@ -67,11 +112,11 @@ function custom_mod_node_view_alter(&$build)
 			$titleCount = explode(' ', $build['links']['comment']['#links']['comment-comments']['title']);
 			if(is_numeric($titleCount[0]))
 			{
-				$titleCount[1] = t('Story');
+				$titleCount[1] = t('Calliogram');
 					
 				if($titleCount[0] > 1)
 				{
-					$titleCount[1] = t('Storys');
+					$titleCount[1] = t('Calliograms');
 				}
 				$titleCount[0] = '<span class="comment_count">' . $titleCount[0] . '</span>';
 			}
@@ -80,10 +125,13 @@ function custom_mod_node_view_alter(&$build)
 			$build['links']['comment']['#links']['comment-comments']['title'] = implode($glue, $titleCount);
 		}
 
-		
-		$build['links']['comment']['#links']['comment-comments']['attributes']['title'] = t('Read first story');
-		$build['links']['comment']['#links']['comment-add']['title'] = t('Tell your Story');
-		$build['links']['comment']['#links']['comment-add']['attributes']['title'] = t('Tell new story');
+		if(isset($build['links']['comment']['#links']['comment-new-comments']))
+		{
+			unset($build['links']['comment']['#links']['comment-new-comments']);
+		}
+		$build['links']['comment']['#links']['comment-comments']['attributes']['title'] = t('Read first Calliogram');
+		$build['links']['comment']['#links']['comment-add']['title'] = t('Your Calliogram');
+		$build['links']['comment']['#links']['comment-add']['attributes']['title'] = t('Write Calliogram');
 		
 	}
 }
