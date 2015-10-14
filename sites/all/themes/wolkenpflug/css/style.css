@@ -198,6 +198,13 @@ body.background_Fauna
     background-color: rgba(0, 0, 0, 0.5);
     width: auto;
 }
+.slideshow_container #menu-wrapper 
+{
+    left: 220px;
+    bottom: 20px;
+    background-color: none;
+
+}
 .text_container
 {
 	float: left;
@@ -370,7 +377,7 @@ img.portrait
     border-top-left-radius: 30px;
     background-color:rgba(0,0,0,0.3);
 }
-
+.language-switcher-locale-url li a:hover,
 #main-menu a:hover, 
 #main-menu li > a.active,
 #block-menu-menu-kategorien li > a.active,
@@ -381,6 +388,12 @@ img.portrait
     background:  url("/sites/all/themes/wolkenpflug/images/backgroundsquare.png") repeat-x center bottom;
 }
 
+.language-switcher-locale-url li a
+{
+	background: none;
+	box-shadow: none;
+	padding-bottom: 9px;
+}
 span.drop-arrow 
 {
     display: none;
@@ -661,7 +674,7 @@ div.comment
 .comment_form_wrapper h2
 {
 	margin-left: 45px;
-	margin-top:15px;
+	margin-top: 15px;
 	margin-bottom: 0px;
 }
 .write_comment #comment-form
@@ -675,3 +688,50 @@ div.comment
 	padding-top: 10px;
 }
 
+.view-katalog .views-row
+{
+	float: left;
+	position: relative;
+	padding: 0px 11px 0px 11px;
+	text-align: center;
+	width: 378px;
+	margin-bottom: 20px;
+	height: 100%;
+}
+
+.view-katalog .views-row img
+{
+	border: 2px solid #909090;
+	padding:4px;
+	box-shadow: -15px 15px 15px #000000;
+}
+.view-katalog .views-field-title
+{
+	margin-bottom: 10px;
+}
+.katalog_row
+{
+	margin-bottom:20px;
+}
+.filter-help
+{
+	display: none;
+}
+.language-switcher-locale-url li
+{
+	display: block;
+}
+#top-links
+{
+	position: absolute;
+	bottom:0px;
+	left:10px;
+	z-index: 101;
+}
+#top-links ul
+{
+	margin: 0px;
+	padding: 0px;
+	font-size: 0.83em;
+	letter-spacing: 0.09em;
+}

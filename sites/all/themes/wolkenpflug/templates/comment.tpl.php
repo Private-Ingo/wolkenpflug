@@ -59,7 +59,6 @@
  * @ingroup themeable
  */
 	global $base_url;
-//echo '<pre>' . print_r($comment, true) . '</pre>'; die();
 	$args = request_path();
 	$argsPart = explode('/',$args);
 	$iscomment = false;

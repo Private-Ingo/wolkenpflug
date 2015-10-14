@@ -83,16 +83,20 @@
 	hide($content['field_gruppe']);
 	hide($content['service_links']);
 	unset($content['links']['node']);
+	global $language;
 	$icons = '';
 	$addClass = '';
+	
 	if(isset($content['field_gruppe']) && isset($content['field_gruppe']['#items']))
 	{
-		
 		foreach ($content['field_gruppe']['#items'] as $item)
 		{
-			$icons .= '<a href="/'. drupal_get_path_alias('taxonomy/term/'. $item['taxonomy_term']->tid , NULL) . '">';
-			$icons .= theme('image_style', array('path' => $item['taxonomy_term']->field_raume_icons[LANGUAGE_NONE][0]['uri'], 'style_name' => 'raume_icons', 'title' =>$item['taxonomy_term']->name));
-			$icons .='</a>';
+			if($item['taxonomy_term']->language == $language->language)
+			{
+				$icons .= '<a href="/'. drupal_get_path_alias('taxonomy/term/'. $item['taxonomy_term']->tid , $language->language) . '">';
+				$icons .= theme('image_style', array('path' => $item['taxonomy_term']->field_raume_icons[LANGUAGE_NONE][0]['uri'], 'style_name' => 'raume_icons', 'title' =>$item['taxonomy_term']->name));
+				$icons .='</a>';
+			}
 		}
 	}
 	

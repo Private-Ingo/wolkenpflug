@@ -40,14 +40,14 @@
 <div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php if ($content['comments'] && $node->type != 'forum'): ?>
     <?php print render($title_prefix); ?>
-    <h2 class="title"><?php print t('Storys'); ?></h2>
+    <h2 class="title"><?php print t('Calliograms'); ?></h2>
     <?php print render($title_suffix); ?>
   <?php endif; ?>
 
   <?php print render($content['comments']); ?>
   <?php if ($content['comment_form']): ?>
   <div class="comment_form_wrapper">
-    <h2 class="title comment-form"><?php print t('Add new story'); ?></h2>	
+    <h2 class="title comment-form"><?php print t('Write Calliogram'); ?></h2>	
     <div class="expand_comment" onclick="javascript: if(eval(typeof toggleCommentSection === 'function')){toggleCommentSection(this)};">
 		<img src="/sites/all/themes/wolkenpflug/images/arrow_up.png" title="<?php print t('open/close');?>">
 	</div>

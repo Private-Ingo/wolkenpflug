@@ -10,8 +10,9 @@
 .js #main-menu ul:first-child {
   display: none;
 }
-
-#menu-wrapper {
+.language-switcher-locale-url li a,
+#menu-wrapper 
+{
   background: #444;
   background: -moz-repeating-linear-gradient(#555, #333 42px);
   background: -webkit-repeating-linear-gradient(#555, #333 42px);

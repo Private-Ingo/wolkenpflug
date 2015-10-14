@@ -70,6 +70,10 @@
 	{
 		$addClass = 'write_comment';
 	}
+	
+	global $language;
+	$langCode = $language->language;
+	
 ?>
 
 <header id="head" role="banner" class="container">
@@ -103,6 +107,21 @@
     </div>
   </nav>
 </div>
+	<div id="top-links" class="six columns omega">
+  <?php if ($page['top_links']): ?>
+  <style>
+  <?php 
+  
+  	print	'.language-switcher-locale-url li.' . $langCode . '
+  	  	{
+  	  		display: none;
+  	  	}';
+ 
+	?>
+  </style>
+    <?php print render($page['top_links']); ?>
+  <?php endif; ?>
+</div>
 <!-- end main-menu -->
 <?php endif; ?>
 </div>
@@ -118,14 +137,7 @@
         <div class="site-slogan"><?php print $site_slogan; ?></div><!--site slogan-->
       <?php endif; ?>
     </div>
-
   </hgroup>
-
-<div id="top-links" class="six columns omega">
-  <?php if ($page['top_links']): ?>
-    <?php print render($page['top_links']); ?>
-  <?php endif; ?>
-</div>
 </header>
 
 
@@ -238,7 +250,7 @@
 				{
 					$temObj = taxonomy_term_load($q[2]);
 			
-					if(is_object($temObj) && isset($temObj->field_raume_icons[LANGUAGE_NONE][0]['uri']))
+					if(is_object($temObj))
 					{
 						//$image = theme('image_style', array('path' => $temObj->field_raume_icons[LANGUAGE_NONE][0]['uri'], 'style_name' => 'raume_icons'));
 						$des = $temObj->description;
