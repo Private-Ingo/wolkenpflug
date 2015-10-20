@@ -66,6 +66,12 @@
 	{
 		$iscomment = true;
 	}
+	
+
+	
+	$desText = $comment->comment_body[LANGUAGE_NONE][0]['value'];
+	$desText = str_replace(array("\r\n", "\n", "\r", "\t"), ' ', $desText);
+	$desText = trim($desText);
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print $picture ?>
@@ -102,24 +108,20 @@
 		<a 
 			target="_blank" rel="nofollow" class="service-links-facebook" 
 			title="<?php print t('Share on Facebook');?>"
-			href="http://www.facebook.com/sharer.php?u=<?php print $base_url;?>
-			<?php print '/comment/' . $comment->cid . '#comment-' . $comment->cid; ?>&amp;t=<?php print $comment->comment_body[LANGUAGE_NONE][0]['value']; ?>">
-		
+			href="http://www.facebook.com/sharer.php?u=<?php print $base_url .'/comment/' . $comment->cid . '#comment-' . $comment->cid; ?>&amp;t=<?php print $desText; ?>">
 			<img alt="Facebook logo" src="<?php print $base_url;?>/sites/all/modules/service_links/images/facebook.png" typeof="foaf:Image">
 		</a>
 		<a 
 			class="service-links-google-plus" 
 			target="_blank" rel="nofollow" title="<?php print t('Share on Google+');?>" 
-			href="https://plus.google.com/share?url=<?php print $base_url;?>
-			<?php print '/comment/' . $comment->cid . '#comment-' . $comment->cid; ?>">
+			href="https://plus.google.com/share?url=<?php print $base_url . '/comment/' . $comment->cid . '#comment-' . $comment->cid; ?>">
 			
 			<img alt="Google+ logo" src="<?php print $base_url;?>/sites/all/modules/service_links/images/google_plus.png" typeof="foaf:Image">
 		</a>
 		<a 
 			class="service-links-twitter" target="_blank" rel="nofollow" 
 			title="<?php print t('Share on Twitter');?>" 
-			href="http://twitter.com/share?url=<?php print $base_url;?>
-			<?php print '/comment/' . $comment->cid . '#comment-' . $comment->cid; ?>&text=<?php print $comment->comment_body[LANGUAGE_NONE][0]['value']; ?>">
+			href="http://twitter.com/share?url=<?php print $base_url . '/comment/' . $comment->cid . '#comment-' . $comment->cid; ?>&text=<?php print $desText; ?>">
 			<img alt="Twitter logo" src="<?php print $base_url;?>/sites/all/modules/service_links/images/twitter.png" typeof="foaf:Image">
 		</a>
 		<a 

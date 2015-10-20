@@ -160,7 +160,7 @@
 				  <?php endif; ?>
 				  <div class="service_links_container">
 				  <div class="print_link">
-				  <a href=""><img src="/sites/all/themes/wolkenpflug/images/rahmen-rot.png" title="Bald/Future"><span>Mein Druck</span></a>
+				 <!--  <a href=""><img src="/sites/all/themes/wolkenpflug/images/rahmen-rot.png" title="Bald/Future"><span>Mein Druck</span></a>  -->
 				 
 				  </div>
 				  
@@ -225,7 +225,7 @@
 	<div class="page_content">
 		<?php print render($content['service_links']); ?>
 		<div class="print_link">
-			  <a href=""><img src="/sites/all/themes/wolkenpflug/images/rahmen-rot.png" title="Bald/Future"><span>Mein Druck</span></a>
+			 <!--   <a href=""><img src="/sites/all/themes/wolkenpflug/images/rahmen-rot.png" title="Bald/Future"><span>Mein Druck</span></a> -->
 		</div>
 		<?php print render($content); ?>
   		<?php print render($content['field_image']);?>

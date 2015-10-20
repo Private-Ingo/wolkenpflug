@@ -89,11 +89,20 @@
      
  </div>
   	<?php
-	  	if($is_front || !isset($node))
+  	if(module_exists('mobile_detect'))
+  	{
+	  	$detect = mobile_detect_get_object();
+	  	if(is_object($detect))
 	  	{
-			$block = module_invoke('views', 'block_view', 'slideshow-block');
-			print render($block['content']);
+	  		$is_mobile = $detect->isMobile();
 	  	}
+  	}
+  	if(($is_front || !isset($node)) && $is_mobile == false)
+  	{
+		$block = module_invoke('views', 'block_view', 'slideshow-block');
+		print render($block['content']);
+  	}
+  	
 	?>
 	<?php if ($primary_nav): ?>
 <div id="menu-wrapper" class="container">
