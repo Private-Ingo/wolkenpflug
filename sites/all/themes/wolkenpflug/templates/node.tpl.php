@@ -83,7 +83,9 @@
 	hide($content['field_gruppe']);
 	hide($content['service_links']);
 	unset($content['links']['node']);
+	
 	global $language;
+	global $user;
 	$icons = '';
 	$addClass = '';
 	
@@ -148,6 +150,11 @@
 			</header>
 	
 			<?php print render($content);?>
+			<?php if($node->rate_werk['#markup']):?>
+			<div class="rate">
+			<?php print $node->rate_werk['#markup'];?>
+			</div>
+			<?php  endif;?>
 			<?php if ($node_block): ?>
 			    <div id="node-block">
 			      <?php print render($node_block); ?>
@@ -159,11 +166,12 @@
 				      <nav class="links node-links clearfix"><?php print render($content['links']); ?></nav>
 				  <?php endif; ?>
 				  <div class="service_links_container">
+				  <?php if($node->field_drucken[LANGUAGE_NONE][0]['value'] == 1 && ($user->uid == 1 || $user->uid == 8)): ?>
 				  <div class="print_link">
-				 <!--  <a href=""><img src="/sites/all/themes/wolkenpflug/images/rahmen-rot.png" title="Bald/Future"><span>Mein Druck</span></a>  -->
 				 
+				 <button data-cp-url="<?php print $content['field_image']['#object']->field_image[LANGUAGE_NONE][0]['filename'];?>"></button><span><?php print t('Buy Now');?></span>
 				  </div>
-				  
+				  <?php  endif;?>
 				  	<?php print render($content['service_links']); ?>
 				  	</div>
 					<div class="icon_container">
@@ -224,11 +232,13 @@
 	</div>	
 	<div class="page_content">
 		<?php print render($content['service_links']); ?>
+
 		<div class="print_link">
 			 <!--   <a href=""><img src="/sites/all/themes/wolkenpflug/images/rahmen-rot.png" title="Bald/Future"><span>Mein Druck</span></a> -->
 		</div>
 		<?php print render($content); ?>
   		<?php print render($content['field_image']);?>
+  		
   		<?php print render($content['comments']);?>
 	</div>
   <?php endif;?>

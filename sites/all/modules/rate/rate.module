@@ -218,8 +218,9 @@ function rate_generate_widget($widget_id, $content_type, $content_id, $mode = RA
 
   $widgets = variable_get(RATE_VAR_WIDGETS, array());
   $widget = $widgets[$widget_id];
+  
   _rate_check_widget($widget);
-
+ 
   // Determine if the user may vote.
   $entities = entity_load($content_type, array($content_id));
   $node = $entities[$content_id];
@@ -262,7 +263,7 @@ function rate_generate_widget($widget_id, $content_type, $content_id, $mode = RA
 
   // Get voting results.
   $results = rate_get_results($content_type, $content_id, $widget_id);
-
+  
   $results['empty'] = $results['count'] ? FALSE : TRUE;
 
   // Handle interaction modes.
@@ -827,33 +828,34 @@ function rate_comment_view_alter(&$comment) {
  * AHAH callback for the vote buttons.
  */
 function rate_vote_ahah() {
+	
   $content_type = preg_replace('/[^\\w\\-]/', '', $_GET['content_type']);
   $content_id = (int) $_GET['content_id'];
   $widget_id = (int) $_GET['widget_id'];
   $widget_mode = (int) $_GET['widget_mode'];
-
   $widgets = variable_get(RATE_VAR_WIDGETS, array());
   $widget = $widgets[$widget_id];
-
+  //echo '<pre>--' . print_r($_GET, true) . '--</pre>';die();
   // Process options.
+  
   foreach ($widget->options as $option) {
     // This name must be unique for all submit buttons across the page, AHAH will fail otherwise.
     $id = "opt-$widget_id-$content_type-$content_id-{$option[0]}";
     $token = rate_get_token($id);
-
+    
     if (isset($_GET['token']) && $_GET['token'] == $token) {
       rate_save_vote($widget, $content_type, $content_id, $option[0], TRUE);
     }
   }
-
+ // echo '<pre>--' . print_r($id, true) . '--</pre>';die();
   // Process arbitrary value, used for sliders.
   if (isset($_GET['value']) && $widget->value_type == 'percent') {
     // Validate the token against the general widget token (found in the widget classes).
     $id = "rate-$widget_id-$content_type-$content_id";
     $token = _rate_get_token($id);
     $value = (int) $_GET['value'];
-
     if (isset($_GET['token']) && $_GET['token'] == $token && $value >= 0 && $value <= 100) {
+    	
       rate_save_vote($widget, $content_type, $content_id, $value, TRUE);
     }
   }

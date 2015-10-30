@@ -271,6 +271,7 @@ body.background_Fauna
 	background: rgba(0, 0, 0, 0.5);
 }
 
+.text_container .rate,
 .text_container .field-name-body,
 .text_container .content_links,
 .text_container header
@@ -735,3 +736,57 @@ div.comment
 	font-size: 0.83em;
 	letter-spacing: 0.09em;
 }
+
+.rate-widget-slider.rate-user .rate-slider-value
+{
+	background-color: #ffffff;
+}
+.rate-widget-slider .rate-slider-value,
+.rate-widget-slider .ui-slider 
+{
+	height: 5px;
+}
+
+.text_container .rate-widget-slider .rate-slider-value,
+.text_container .rate-widget-slider .ui-slider 
+{
+	width: 255px;
+}
+.rate
+{
+	width: 260px;
+	padding: 10px;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.5);
+	margin-bottom: 10px;
+	color: #ffffff;
+}
+.rate-info, .rate-description 
+{
+    color: #fff;
+}
+.rate ul
+{
+	margin-bottom: 0px;
+}
+
+.print_link button
+{
+	background: url("/sites/all/themes/wolkenpflug/images/rahmen-grün.png") no-repeat;
+	background-size: 48px auto;
+	width: 48px;
+	height: 48px;
+	border: none;
+	padding: 0px;
+	cursor:pointer;
+}
+
+.print_link 
+{
+	margin-bottom: 20px;
+}
+.print_link span
+{
+	color:#ffffff;
+}
+

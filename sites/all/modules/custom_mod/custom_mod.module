@@ -1,5 +1,10 @@
 <?php
 
+function custom_mod_rate_vote_alter($votes, $context)
+{
+	cache_clear_all();
+}
+
 function custom_mod_form_alter(&$form, &$form_state, $form_id) 
 {	
 	if($form_id == 'comment_node_werk_form')

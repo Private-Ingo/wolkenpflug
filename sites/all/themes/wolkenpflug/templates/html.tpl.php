@@ -63,6 +63,18 @@ if ($args[0] == 'taxonomy' )
 
 </head>
 <body class="<?php print $classes; ?> <?php if(isset($name) ?  print 'background_'. $name : '' );?>" <?php print $attributes;?>>
+<div id="cp-store-root" data-cp-settings='{ "access_key": "c68c8a77e5b4c69e3e4eb1d5e7fc6240" }'></div>
+<script>
+    (function ( d, s, id ) {
+        var js, cpJs = d.getElementsByTagName( s )[0], t = new Date();
+        if ( d.getElementById( id ) ) return;
+        js = d.createElement( s );
+        js.id = id;
+        js.setAttribute( 'data-cp-url', 'https://store.canvaspop.com' );
+        js.src = 'https://store.canvaspop.com/static/js/cpopstore.js?bust=' + t.getTime();
+        cpJs.parentNode.insertBefore( js, cpJs );
+    }( document, 'script', 'canvaspop-jssdk' ));
+</script>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>

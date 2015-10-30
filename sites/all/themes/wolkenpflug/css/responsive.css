@@ -384,6 +384,7 @@
 	{
    	 	border-top-left-radius: 0px;
 	}
+	
 	.text_container header
 	{
 		margin-top:0px; 
@@ -408,9 +409,21 @@
 	    width: 100px;
 	    z-index: 101;
 	}
+	
 	#content .text_article.node-text
 	{
 		margin-bottom:30px;
+	}
+	
+	.text_container .rate
+	{
+		width: auto;
+		padding: 0px;
+		overflow: hidden;
+		border-top-left-radius: unset;
+		margin-bottom: 0px;
+		background-color: unset;
+		margin-top: 5px;
 	}
 }
 
@@ -429,6 +442,7 @@
 		font-size: 35px;
 		height: 35px;
 	}
+	
 }
 
 /* #Mobile (Landscape)
