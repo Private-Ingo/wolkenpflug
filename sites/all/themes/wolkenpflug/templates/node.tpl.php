@@ -82,6 +82,7 @@
 	hide($content['links']);
 	hide($content['field_gruppe']);
 	hide($content['service_links']);
+	hide($content['field_peecho']);
 	unset($content['links']['node']);
 	
 	global $language;
@@ -109,6 +110,7 @@
 
 		$iscomment = true;
 	}
+	//echo '<pre>' . print_r($content['field_peecho'], true) . '</pre>';
 ?>
 
 <article id="node-<?php print $node->nid; ?>" class="<?php if($type == 'page' ? print 'page_text ' : ''); ?> <?php if($type == 'text' ? print 'text_article ' : ''); ?><?php print $classes; ?> clearfix" <?php print $attributes; ?>>
@@ -166,10 +168,11 @@
 				      <nav class="links node-links clearfix"><?php print render($content['links']); ?></nav>
 				  <?php endif; ?>
 				  <div class="service_links_container">
-				  <?php if($node->field_drucken[LANGUAGE_NONE][0]['value'] == 1 && ($user->uid == 1 || $user->uid == 8)): ?>
+				  <?php if(($node->field_drucken[LANGUAGE_NONE][0]['value'] && isset($content['field_peecho']['#object']->field_peecho[LANGUAGE_NONE][0]['value'])) == 1 && ($user->uid == 1 || $user->uid == 8)): ?>
 				  <div class="print_link">
-				 
-				 <button data-cp-url="<?php print $content['field_image']['#object']->field_image[LANGUAGE_NONE][0]['filename'];?>"></button><span><?php print t('Buy Now');?></span>
+					<a title="<?php print t('My Print');?>" href="<?php print $content['field_peecho']['#object']->field_peecho[LANGUAGE_NONE][0]['value'];?>"></a>
+					<div class="text"><?php print t('My Print');?></div>
+					<div class="info"><a  href="/druck-info"title="<?php print t('More Info');?>"></a></div>
 				  </div>
 				  <?php  endif;?>
 				  	<?php print render($content['service_links']); ?>
@@ -233,9 +236,13 @@
 	<div class="page_content">
 		<?php print render($content['service_links']); ?>
 
+		<?php if($node->field_drucken[LANGUAGE_NONE][0]['value'] == 1  && isset($content['field_peecho']['#object']->field_peecho[LANGUAGE_NONE][0]['value'])): ?>
 		<div class="print_link">
-			 <!--   <a href=""><img src="/sites/all/themes/wolkenpflug/images/rahmen-rot.png" title="Bald/Future"><span>Mein Druck</span></a> -->
+	 		<a href="<?php print $content['field_peecho']['#object']->field_peecho[LANGUAGE_NONE][0]['value'];?>"></a>
+	 		<div class="text"><?php print t('My Print');?></div>
+	 		<div class="info"><a  href="/druck-info"title="<?php print t('More Info');?>"></a></div>
 		</div>
+		<?php  endif;?>
 		<?php print render($content); ?>
   		<?php print render($content['field_image']);?>
   		

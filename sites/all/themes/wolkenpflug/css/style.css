@@ -89,25 +89,6 @@ body.background_Fauna
 	background-position: center center;
 }
 
-.print_link
-{
-	height: 30px;
-}
-
-.print_link img
-{
-	width: 30px;
-	height: 30px;
-}
-
-.print_link span
-{
-	padding: 3px;
-}
-.print_link a
-{
-	display: inline-flex;
-}
  .service-links img:hover
 {
 	width: 30px;
@@ -770,23 +751,43 @@ div.comment
 	margin-bottom: 0px;
 }
 
-.print_link button
+.print_link a
 {
-	background: url("/sites/all/themes/wolkenpflug/images/rahmen-grün.png") no-repeat;
-	background-size: 48px auto;
-	width: 48px;
-	height: 48px;
+	background: url("/sites/all/themes/wolkenpflug/images/rahmen.png") no-repeat;
+	background-size: 32px auto;
+	width: 32px;
+	height: 32px;
 	border: none;
 	padding: 0px;
 	cursor:pointer;
+	float: left;
+}
+
+.print_link .info a
+{
+	background: url("/sites/all/themes/wolkenpflug/images/info.png") no-repeat;
+	background-size: 24px auto;
+	width: 24px;
+	height: 24px;
+	border: none;
+	padding: 0px;
+	cursor:pointer;
+	float: left;
 }
 
 .print_link 
 {
-	margin-bottom: 20px;
+	display: inline-block;
 }
-.print_link span
+.print_link div.text
 {
-	color:#ffffff;
+	color: #d3d3d3;
+	float: left;
+	padding: 4px 6px 0px 4px;
 }
-
+.print_link div.info
+{
+	color: #d3d3d3;
+	float: left;
+	padding: 4px 0px 0px 5px;
+}

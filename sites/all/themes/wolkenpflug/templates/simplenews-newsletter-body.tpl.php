@@ -97,7 +97,7 @@ td
 -->
 </style>
 	
-<h3><?php print t('Dear') . ' '. $simplenews_subscriber->mail;?></h3>
+<h3><?php print t('Hello');?></h3>
 
 	<table align="center" width="800" border="0" cellspacing="0" cellpadding="0" style="margin-right:auto; margin-left:auto;" >
 	<tr>
