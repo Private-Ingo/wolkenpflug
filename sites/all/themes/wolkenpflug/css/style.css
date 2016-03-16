@@ -460,6 +460,12 @@ span.drop-arrow
 	display:inline;
 }
 
+.icon_container a
+{
+	display: inline-block;
+	margin-right: 5px;
+}
+
 .node-text .icon_container
 {
 	position: relative;
