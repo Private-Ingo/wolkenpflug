@@ -89,7 +89,7 @@
 	global $user;
 	$icons = '';
 	$addClass = '';
-	//echo '<pre>' . print_r($content['field_gruppe'], true) . '</pre>'; die();	
+	
 	if(isset($content['field_gruppe']) && isset($content['field_gruppe']['#items']))
 	{
 		foreach ($content['field_gruppe']['#items'] as $item)
@@ -108,7 +108,6 @@
 	{
 		$iscomment = true;
 	}
-	//echo '<pre>' . print_r($content['field_peecho'], true) . '</pre>';
 ?>
 
 <article id="node-<?php print $node->nid; ?>" class="<?php if($type == 'page' ? print 'page_text ' : ''); ?> <?php if($type == 'text' ? print 'text_article ' : ''); ?><?php print $classes; ?> clearfix" <?php print $attributes; ?>>
@@ -166,11 +165,14 @@
 				      <nav class="links node-links clearfix"><?php print render($content['links']); ?></nav>
 				  <?php endif; ?>
 				  <div class="service_links_container">
-				  <?php if(($node->field_drucken[LANGUAGE_NONE][0]['value'] && isset($content['field_peecho']['#object']->field_peecho[LANGUAGE_NONE][0]['value'])) == 1 && ($user->uid == 1 || $user->uid == 8)): ?>
+				  <?php if(isset($node->field_drucken[LANGUAGE_NONE][0]['value']) && $node->field_drucken[LANGUAGE_NONE][0]['value'] == 1 && ($user->uid == 1 || $user->uid == 8)): ?>
 				  <div class="print_link">
-					<a title="<?php print t('My Print');?>" href="<?php print $content['field_peecho']['#object']->field_peecho[LANGUAGE_NONE][0]['value'];?>"></a>
-					<div class="text"><?php print t('My Print');?></div>
-					<div class="info"><a  href="/druck-info"title="<?php print t('More Info');?>"></a></div>
+						<button title="<?php print t('My Print');?>" data-cp-url="<?php print $content['field_image']['#object']->field_image[LANGUAGE_NONE][0]['filename'];?>">
+						</button>
+						<div class="text">
+						<?php print t('My Print');?>
+						</div>
+					<div class="info"><a  href="/druck-info" title="<?php print t('More Info');?>"></a></div>
 				  </div>
 				  <?php  endif;?>
 				  	<?php print render($content['service_links']); ?>
@@ -232,15 +234,16 @@
 	    <?php if ($icons ? print $icons : '') ?>
 	</div>	
 	<div class="page_content">
-		<?php print render($content['service_links']); ?>
-
-		<?php if($node->field_drucken[LANGUAGE_NONE][0]['value'] == 1  && isset($content['field_peecho']['#object']->field_peecho[LANGUAGE_NONE][0]['value'])): ?>
+			<?php if(isset($node->field_drucken[LANGUAGE_NONE][0]['value']) && $node->field_drucken[LANGUAGE_NONE][0]['value'] == 1 && ($user->uid == 1 || $user->uid == 8)): ?>
 		<div class="print_link">
-	 		<a href="<?php print $content['field_peecho']['#object']->field_peecho[LANGUAGE_NONE][0]['value'];?>"></a>
-	 		<div class="text"><?php print t('My Print');?></div>
-	 		<div class="info"><a  href="/druck-info"title="<?php print t('More Info');?>"></a></div>
+	 		<button title="<?php print t('My Print');?>" data-cp-url="<?php print $content['field_image']['#object']->field_image[LANGUAGE_NONE][0]['filename'];?>"></button>
+				<div class="text">
+					<?php print t('My Print');?>
+				</div>
+			<div class="info"><a  href="/druck-info" title="<?php print t('More Info');?>"></a></div>
 		</div>
 		<?php  endif;?>
+		<?php print render($content['service_links']); ?>
 		<?php print render($content); ?>
   		<?php print render($content['field_image']);?>
   		
