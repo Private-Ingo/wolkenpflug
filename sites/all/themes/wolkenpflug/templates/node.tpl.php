@@ -172,7 +172,7 @@
 						<div class="text">
 						<?php print t('My Print');?>
 						</div>
-					<div class="info"><a  href="/druck-info" title="<?php print t('More Info');?>"></a></div>
+					<div class="info"><a  href="/<?php print t('my-print')?>" title="<?php print t('More Info');?>"></a></div>
 				  </div>
 				  <?php  endif;?>
 				  	<?php print render($content['service_links']); ?>
@@ -240,7 +240,7 @@
 				<div class="text">
 					<?php print t('My Print');?>
 				</div>
-			<div class="info"><a  href="/druck-info" title="<?php print t('More Info');?>"></a></div>
+			<div class="info"><a  href="/<?php print t('my-print')?>" title="<?php print t('More Info');?>"></a></div>
 		</div>
 		<?php  endif;?>
 		<?php print render($content['service_links']); ?>
